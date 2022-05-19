@@ -6,16 +6,13 @@
 </head>
 <body>
 <script>
-    var  diemVatLy;
-    var diemHoaHoc;
-    var diemSinhHoc;
-    var tinhTrungBinhDiem = diemVatLy + diemHoaHoc + diemSinhHoc;
-    diemVatly = parseInt ( prompt ("diemVatLy"));
+    let diemVatLy;
+    let diemHoaHoc;
+    let diemSinhHoc;
+    diemVatLy = parseInt ( prompt ("diemVatLy"));
     diemHoaHoc = parseInt ( prompt ("diemHoaHoc"));
     diemSinhHoc = parseInt ( prompt ("diemSinhHoc"));
-    document.write ("diemVatLy = " + diemVatLy);
-    document.write ("diemHoaHoc = " + diemHoaHoc);
-    document.write ("diemSinhHoc = " + diemSinhHoc);
+    let tinhTrungBinhDiem = (diemVatLy + diemHoaHoc + diemSinhHoc)/3;
     document.write ("tinhTrungBinhDiem:" + tinhTrungBinhDiem)
 </script>
 </body>
