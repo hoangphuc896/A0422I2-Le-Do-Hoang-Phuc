@@ -7,16 +7,31 @@
 <body>
     <form>
         <h2>Caculator</h2>
-        <input type="text" size="20">
-        <input type="text" size="20"></br>
-        <button>Addition(+) id</button>
-        <button>Subtraction(-)</button>
-        <button>Multiplication(X)</button>
-        <button>Division(/)</button>
+        <input id="nhapsoa" type="text" size="20">
+        <input id="nhapsob"type="text" size="20"></br>
+        <button id="cong" onclick="ketqua(this.id)">Addition(+) </button>
+        <button id="tru" onclick="ketqua(this.id)">Subtraction(-)</button>
+        <button id="nhan"onclick="ketqua(this.id)">Multiplication(X)</button>
+        <button id="chia" onclick="ketqua(this.id)">Division(/)</button>
     </form>
 <script>
-    function f() {
-
+    function ketqua(tongso) {
+    let nhapsoa = document.getElementById("nhapsoa").value;
+    let nhapsob = document.getElementById("nhapsob").value;
+    switch (tongso) {
+        case "cong":
+            alert(parseInt(nhapsob)+parseInt(nhapsoa));
+            break;
+        case  "tru":
+            alert(nhapsoa-nhapsob);
+            break;
+        case "nhan":
+            alert(nhapsoa*nhapsob)
+            break;
+        case "chia":
+            alert(nhapsoa/nhapsob)
+            break;
+    }
     }
 </script>
 </body>

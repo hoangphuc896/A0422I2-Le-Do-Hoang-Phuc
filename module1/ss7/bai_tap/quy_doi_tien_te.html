@@ -5,31 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-<form>
-    <table>
+    <table style="text-align: center">
         <tr>
             <th>Amount</th>
-            <th>From Currency</th>
-            <th>to Currency</th>
+            <th>FromCurrency</th>
+            <th>toCurrency</th>
         </tr>
         <tr>
-            <th><input type="text" id="tiente" size="20"></th>
-            <th><select name="tiente">
+            <th><input id="amount" type="text" name="tiente" size="20"></th>
+            <th><select id="FromCurrency" name="tiente">
                 <option value="VN">Vietnam</option>
-                <option value="My">My</option>
+                <option value="USD">My</option>
             </select>
             </th>
-            <th><select name="tiente">
-                <option value="My">My</option>
-                <option value="VietNam">VietNam</option>
+            <th><select id="toCurrency" name="tiente">
+                <option value="USD">My</option>
+                <option value="VN">VietNam</option>
             </select> </th>
-            <th><input type="submit" value="Convert"></th>
+            <th><input type = "submit"onclick="Convert()" value="Convert"></th>
         </tr>
     </table>
-</form>
 <script>
-
+    function Convert() {
+    let amount = document.getElementById("amount").value;
+    let FromCurrency = document.getElementById("FromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
+    if(isNaN(amount)||amount <= 0){
+        alert("khong the thuc hien")}
+    if(FromCurrency == "VN" && toCurrency == "USD"){
+        alert(amount*23000)}
+    else {
+        if(FromCurrency == "USD" && toCurrency=="VN") {
+            alert(amount / 23000);
+        }
+    }
+    }
 </script>
-
 </body>
 </html>
