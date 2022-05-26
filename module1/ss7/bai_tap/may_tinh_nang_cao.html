@@ -23,45 +23,48 @@
     </style>
 </head>
 <body>
-<form>
+<!--<form>-->
     <table border="solid">
         <tr>
-            <th colspan="4"><input id="ketqua" type="text"></th>
+            <th colspan="4"><input id="ketqua" type="text" value="" onkeyup="tongso()"></th>
         </tr>
         <tr>
-            <th><button id="7" onclick="this.is">7</button></th>
-            <th><button id="8" onclick="this.is">8</button></th>
-            <th><button id="9" onclick="this.is">9</button></th>
-            <th><button id="/" onclick="this.is">/</button></th>
+            <th><button id="7" onclick="tongso(this.id)">7</button></th>
+            <th><button id="8" onclick="tongso(this.id)">8</button></th>
+            <th><button id="9" onclick="tongso(this.id)">9</button></th>
+            <th><button id="/" onclick="tongso(this.id)">/</button></th>
         </tr>
         <tr>
-            <th><button id="4" onclick="this.is">4</button></th>
-            <th><button id="5" onclick="this.is">5</button></th>
-            <th><button id="6" onclick="this.is">6</button></th>
-            <th><button id="*" onclick="this.is">*</button></th>
+            <th><button id="4" onclick="tongso(this.id)">4</button></th>
+            <th><button id="5" onclick="tongso(this.id)">5</button></th>
+            <th><button id="6" onclick="tongso(this.id)">6</button></th>
+            <th><button id="*" onclick="tongso(this.id)">*</button></th>
         </tr>
         <tr>
-            <th><button id="1" onclick="this.is">1</button></th>
-            <th><button id="2" onclick="this.is">2</button></th>
-            <th><button id="3" onclick="this.is">3</button></th>
-            <th><button id="-" onclick="this.is">-</button></th>
+            <th><button id="1" onclick="tongso(this.id)">1</button></th>
+            <th><button id="2" onclick="tongso(this.id)">2</button></th>
+            <th><button id="3" onclick="tongso(this.id)">3</button></th>
+            <th><button id="-" onclick="tongso(this.id)">-</button></th>
         </tr>
         <tr>
-            <th><button id="0" onclick="this.is">0</button></th>
-            <th><button id="." onclick="this.is">.</button></th>
-            <th><button id="=" onclick="this.is">=</button></th>
-            <th><button id="+" onclick="this.is">+</button></th>
+            <th><button id="0" onclick="tongso(this.id)">0</button></th>
+            <th><button id="." onclick="tongso(this.id)">.</button></th>
+            <th><button id="=" onclick="tongso(this.id)">=</button></th>
+            <th><button id="+" onclick="tongso(this.id)">+</button></th>
         </tr>
     </table>
-</form>
+<!--</form>-->
 <script>
     function tongso(pheptinh) {
-    let ketqua = parseInt(prompt(document.getElementById(ketqua()).innerText).value;
-    switch (pheptinh) {
-        case "7":
-            alert(7)
-    }
-    }
+        let a = parseInt(pheptinh);
+        let kq = document.getElementById("ketqua");
+      switch (a) {
+          case (7):
+              kq.value = a;
+              break;
+      }
+        }
+
 </script>
 </body>
 </html>
