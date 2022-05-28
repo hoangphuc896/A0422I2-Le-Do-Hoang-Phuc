@@ -8,9 +8,12 @@
 <script>
     let a = parseInt(prompt("nhập số a")) ;
     let b = parseInt(prompt("nhập số b")) ;
-    if(a % b ==0){
-        alert("bạn Đã đúng")
-    }
+    if (isNaN(a&&b)){
+        alert("đùa nhau à")
+    }else if(a % b ===0){
+        alert("ban đã đúng")
+    }else {
+        alert("đùa nhau hay gì")}
 </script>
 </body>
 </html>

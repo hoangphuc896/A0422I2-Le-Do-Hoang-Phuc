@@ -7,7 +7,9 @@
 <body>
 <script>
     let a = parseInt(prompt("nhập số a"));
-    if(a<0){
+    if(isNaN(a)){
+        alert("ẩu rồi đó bạn")
+    }else if(a<0){
         alert("đây là số nhỏ hơn ko")
     }else {
         alert("đây là số lớn hơn ko")

@@ -9,13 +9,13 @@
     let a = parseInt(prompt("nhập vào số a"));
     let b = parseInt(prompt("nhập vào số b"));
     let c = parseInt(prompt("nhập vào số c"));
-    if((a<c)<b){
-        alert("B là số lớn nhất");
-    }else if((a<b)<c){
-        alert("C là số lớn nhất");
-    }else {
-        alert("A là số lớn nhất");
+    let max = a ;
+    if(max<b){
+        max=b;
+    }if(max<c){
+        max=c
     }
+        alert(max + "là số lớn nhất")
 </script>
 </body>
 </html>

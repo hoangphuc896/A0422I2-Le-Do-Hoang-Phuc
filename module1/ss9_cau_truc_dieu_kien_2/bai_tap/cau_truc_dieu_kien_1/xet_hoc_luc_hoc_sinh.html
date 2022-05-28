@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let đKT= parseInt(prompt("nhập điểm kiểm tra"));
+    let đGK= parseInt(prompt("nhập điểm giữa kỳ"));
+    let đCK= parseInt(prompt("nhập điểm cuối kỳ"));
+    let xHL = (đKT + (đGK*2)+(đCK*3))/6;
+    if(xHL<4){
+        alert("yếu")
+    }else if(xHL<6.5){
+        alert("trung bình")
+    }else {
+        alert("giỏi")
+    }
+</script>
+</body>
+</html>

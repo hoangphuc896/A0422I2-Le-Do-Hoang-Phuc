@@ -7,8 +7,12 @@
 <body>
 <script>
     let soTuoi = parseInt(prompt("nhập số tuổi học sinh"));
-    if(soTuoi<16){
+    if(isNaN(soTuoi)){
+        alert("thứ gì chứ ko phải thứ 7 chủ nhật hỉ")
+    }else if(soTuoi<16){
         alert("Bạn chưa đủ tuổi")
+    }else {
+        alert("bạn đủ tuổi để vào lớp 10")
     }
 </script>
 </body>

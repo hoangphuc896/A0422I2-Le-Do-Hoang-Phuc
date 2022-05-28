@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mLNV= parseInt(prompt("nhập mức lương"));
+    let HH;
+    if(isNaN(mLNV)){
+        alert("Ẩu rồi đó bạn")
+    }else {if(mLNV<5000){
+        HH=mLNV*(5/100);
+    }if(mLNV>=5000){
+        HH=mLNV*(15/100);
+    }if(mLNV>=10000){
+        HH=mLNV*(20/100);
+    }if(mLNV>=20000){
+        HH=mLNV*(30/100);
+    }alert(HH);
+    }
+
+
+</script>
+</body>
+</html>
