@@ -8,12 +8,17 @@
 <script>
     let soP=prompt("nhập số phút gọi trong tháng");
     let cĐTH= soP*1300;
-    if(soP>200){
+    if(isNaN(soP)){
+        alert("bạn không thể thực hiện được")
+    }else {
+    if (soP<200){
+      cĐTH=cĐTH*0.5;
+    }if(soP>200){
         cĐTH=cĐTH*0.75;
     }if(soP>500){
         cĐTH=cĐTH*1.25;
     }
-    alert(cĐTH);
+    alert(cĐTH);}
 </script>
 </body>
 </html>
