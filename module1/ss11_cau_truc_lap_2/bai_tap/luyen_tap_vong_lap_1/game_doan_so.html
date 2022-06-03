@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id = "choi" onclick="game()">Chơi</button>
+<script>
+    function game(choi) {
+        let b = parseInt(Math.random()*10);
+        console.log(b);
+        for( let i=0 ;i<3;i++){
+            let a = parseInt(prompt("hãy chọn số đúng"))
+            if (a<b){
+                alert("số bạn bé hơn")
+            }else if(a>b){
+                alert("số bạn lớn hơn")
+            }else if (a==b){
+                alert("chúc mừng bạn đã trúng thưởng")
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

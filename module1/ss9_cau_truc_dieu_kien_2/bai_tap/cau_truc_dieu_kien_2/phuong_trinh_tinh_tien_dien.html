@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuDien= prompt("số lượng điện đã dùng");
+    let t = parseInt(prompt("số ngày tháng trước "));
+    let n = parseInt(prompt("số ngày trong tháng"))
+    let giaTienDien =  (chuDien/t)*n ;
+    if (chuDien>200){
+        giaTienDien=giaTienDien* 1.75
+    }else if(chuDien>100){
+        giaTienDien=giaTienDien*1.5
+    }else if(chuDien>50){
+        giaTienDien=giaTienDien*1.25
+    }alert(giaTienDien)
+</script>
+</body>
+</html>
