@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [3,2,5,2,5,3];
+    let max = a[0];
+    b=0
+    let total;
+    for (let i=1;i<a.length-1;i++){
+        if (a[i]>max){
+            max=a[i]
+        }
+    }
+    for (let j=0;j<a.length;j++){
+     b += a[j]
+        total=b/j
+    }
+    document.write("số lớn nhất:" + max + "giá trị trung bình:"+total   )
+</script>
+</body>
+</html>

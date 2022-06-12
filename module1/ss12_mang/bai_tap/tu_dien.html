@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("các ký tự cần phiên dịch");
+    let vn = 'xin chào,cảm ơn';
+    let en = 'hello,thanks';
+    let b = [];
+    for (i=0;i<a.length;i++) {
+        if (en.indexOf(a[i])!==-1){
+            b.push(a[i].toLowerCase(vn))
+        }
+        document.write(b.join(""))
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //nối các phần tử
+    // let myColor = ["Red","Green","White","Black"];
+    // document.write(myColor.join('+'))
+
+
+    //chèn dấu-
+    // let a=prompt("nhập số");
+    // let b=[];
+    // for (let i=0;i<a.length-1;i++){
+    //     b.push(a[i]);
+    //     if(a[i]%2===0 && a[i+1]%2===0){
+    //         b.push("-")
+    //     }
+    //
+    // }
+    // document.write(b.join(""))
+
+
+
+
+    //viết hoa các chữ cái
+    let a = prompt("nhập các ký tự");
+    let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lower = 'abcdefghijklmnopqrstuvwxyz';
+    let b = [];
+    for (let i=0;i<a.length;i++){
+        if(upper.indexOf(a[i]) !==-1){
+            b.push(a[i].toLowerCase())
+        }else if(lower.indexOf(a[i]) !==-1){
+            b.push(a[i].toUpperCase())
+        }else {
+            b.push(a[i])
+        }
+    }
+    document.write(b.join(""))
+
+
+</script>
+</body>
+</html>

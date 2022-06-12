@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  for (i=0;i<5;i++){
+      for (j=0;j<5;j++) {
+          if (j==3-i||j==3+i){
+              document.write("*")
+          }else {
+              document.write("&nbsp&nbsp&nbsp&nbsp")
+          }
+          }
+      for (k=0;k<5;k++){
+          if (k==3-i||k==3+i){
+              document.write("*")
+          }else {
+              document.write("&nbsp&nbsp&nbsp&nbsp")
+          }
+      }
+      document.write("<br>")
+  }
+</script>
+</body>
+</html>

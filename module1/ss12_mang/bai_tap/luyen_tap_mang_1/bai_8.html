@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = []
+    for (let i=0;i<10;i++){
+        a[i]= prompt("nhập các phần tử")
+    }
+
+    for (i=0;i<a.length;i++){
+        for(j=i+1;j<a.length;j++){
+            if(a[i]<a[j]){
+                let temp = a[i]
+                a[i]=a[j]
+                a[j]=temp;
+            }
+        }
+    }
+    document.write(a)
+</script>
+</body>
+</html>
