@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("nhập chuỗi")
+    let count=0
+    for (i=0;i<a.length;i++){
+        if(isNaN(a[i])){
+            count++
+        }
+    }
+    document.write(count)
+</script>
 </body>
 </html>

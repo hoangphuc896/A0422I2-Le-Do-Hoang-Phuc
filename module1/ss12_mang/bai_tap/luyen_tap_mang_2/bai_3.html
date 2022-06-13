@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a=parseInt(prompt("nhập số ký tự"))
+    let b=[]
+    for (let i=0;i<a;i++){
+        b[i]=parseInt(prompt("nhập các ký tự"))
+    }
+    let c=0
+    for (let j=0;j<b.length;j++){
+        if (isNaN(b[j])){
+            c++;
+        }
+    }document.write(c)
+</script>
 </body>
 </html>

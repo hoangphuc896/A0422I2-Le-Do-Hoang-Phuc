@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("nhập số ký tự");
+    let b = []
+    for(let i=0;i<a;i++){
+        b[i]=prompt("nhập các ký tự")
+    }
+    for (let j=0;j<b.length;j++){
+        if(b[j]==="-"){
+            b[j]="_"
+        }
+    }
+    document.write(b)
+</script>
 </body>
 </html>
