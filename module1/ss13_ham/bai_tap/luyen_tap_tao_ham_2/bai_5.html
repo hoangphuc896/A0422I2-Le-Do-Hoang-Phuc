@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=[]
+    for (i=0;i<3;i++){
+        a[i]=parseInt(prompt("nhập các số nguyên"))
+    }
+    let min=a[0]
+    function soNho() {
+        for (let j=0;j<3;j++){
+            if(a[j]<min){
+                min=a[j]
+            }
+        }
+        document.write(min)
+    }
+    soNho()
+
+</script>
+</body>
+</html>

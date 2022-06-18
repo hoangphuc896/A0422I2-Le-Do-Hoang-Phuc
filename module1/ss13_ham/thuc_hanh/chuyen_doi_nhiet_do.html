@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+<h1>Temperature Converter</h1>
+<h3>Type a value in the Fahrenheit field to convert the value to Celcius:</h3>
+<p>Fahrenheit <input type="number" id="number" onchange="nhietdo(this.value)" oninput="nhietdo(this.value)"></p>
+<p>Celsius:<span id="ketqua"></span></p>
+</form>
+<script>
+    function nhietdo(numvalue) {
+     numvalue = parseFloat(numvalue);
+     document.getElementById("ketqua").innerHTML=(numvalue-32)/1.8;
+    }
+</script>
+</body>
+</html>

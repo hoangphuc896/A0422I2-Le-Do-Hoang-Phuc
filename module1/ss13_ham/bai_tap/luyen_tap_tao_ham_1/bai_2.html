@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" onclick="addNumbers(this.value)" onchange="addNumbers(this.value)">
+<p id="number">resul</p>
+<script>
+    function addNumbers(number) {
+        number=parseInt(number);
+        document.getElementById("number").innerHTML=number+1
+        return;
+    }
+</script>
+</body>
+</html>

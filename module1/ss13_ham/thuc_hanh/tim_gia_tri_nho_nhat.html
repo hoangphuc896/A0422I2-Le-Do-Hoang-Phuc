@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[[3, 5, 1, 8, -3, 7, 8],[7, 12, 6, 9, 20, 56, 89],[],[0, 0, 0, 0, 0, 0]]
+    let min = minArray(array)
+    function minArray(array) {
+        if (array.length===0){
+            return -1;}
+     let min = array[0];
+     for (let i=0;i<array.length;i++){
+         for (j=i;j<i+1;j++){
+         if(array[j]<min){
+             min=array[j];
+         }
+         }
+     }
+     return min
+    }
+    alert(min);
+
+</script>
+</body>
+</html>
