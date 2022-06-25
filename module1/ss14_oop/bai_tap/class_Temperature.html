@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(c) {
+            this.c=c
+        }
+        doF(){
+            return this.c*9/5+32
+        }
+        doK(){
+            return this.c+273.15
+        }
+    }
+    let temperature= new Temperature(25)
+    let fahrenheit=temperature.doF()
+    let kelvin=temperature.doK()
+    alert("độ Fahrenheit:"+fahrenheit+";Kelvin:"+kelvin)
+</script>
+</body>
+</html>

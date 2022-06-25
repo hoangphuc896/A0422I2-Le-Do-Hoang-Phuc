@@ -11,17 +11,14 @@
     let b=parseInt(prompt("nhập ký tự cần tìm"))
     kiemTra(d)
     function kiemTra(kyTu) {
-        for (let i=0;i<a.length;i++){
+        for (let i=0;i<a;i++){
             d.push(a)
         }
         let count = 0;
         let c = kyTu.indexOf(b);
-        for (let i=0;i<kyTu;i++){
+        for (let i=0;i<kyTu.length;i++){
         if (c !== -1) {
             count++
-
-        } else {
-            document.write(c)
         }
         }
         document.write(count)
