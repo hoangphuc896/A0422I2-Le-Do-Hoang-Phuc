@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-class ElectricLamp{
+    class ElectricLamp{
 constructor(status) {
 this.status=status
 }
@@ -17,26 +17,29 @@ turnOn(){
 this.status=true
 }
 }
-class SwitchButton{
-constructor(status,lamp) {
-this.status=status;
-this.lamp=lamp;
+    class SwitchButton {
+    constructor(status, lamp) {
+        this.status = status;
+        this.lamp = lamp;
+    }
+
+    connectToLamp(lamp) {
+        this.lamp = lamp;
+    }
+
+    switchOff() {
+        this.status = false;
+        this.lamp.turnOff();
+    }
+
+    switchOn() {
+        this.status = true;
+        this.lamp.turnOn();
+    }
 }
-connectToLamp(lamp){
-this.lamp=lamp;
-}
-switchOff(){
-this.status=false;
-this.lamp.turnOff();
-}
-switchOn(){
-this.status=true;
-this.lamp.turnOn();
-}
-}
-let electric = new ElectricLamp(true);
-let swicthbutton= new SwitchButton(true,electric)
-alert(swicthbutton)
+    let electric = new ElectricLamp(true);
+    let swicthbutton= new SwitchButton(true,electric)
+    alert(swicthbutton)
 </script>
 </body>
 </html>

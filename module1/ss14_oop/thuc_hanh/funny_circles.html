@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+
+</style>
 <body>
-<canvas id="myCanvas" width="1368px"height="768px"style="border: 1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas" width="1368px"height="768px"style="border: 1px solid #181818;"></canvas>
 </body>
 <script>
+    let x = parseFloat(prompt("nhập tọa độ"))
+    let y = parseFloat(prompt("nhập tọa độ"))
+    let radius = parseFloat(prompt("nhập bán kính"))
     class Circle{
         constructor(x, y, radius) {
             this.x=x
             this.y=y
             this.radius=radius
-        }}
+        }
+    }
 
     var ctx=document.getElementById("myCanvas").getContext("2d");
-    var circle = new Circle(500, 500, 200  );
+    var circle = new Circle(x, y, radius );
     ctx.beginPath()
     ctx.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
     ctx.fill();

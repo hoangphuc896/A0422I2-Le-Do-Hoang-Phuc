@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str=prompt("nhập chuỗi ký tự")
+    let str1=str.slice()
+    stringLower(str1)
+    function stringLower(string) {
+        let count=0
+        for (let i=0;i<string.length;i++){
+            if (string[i].indexOf(string[i].toUpperCase())!==-1){
+                count++
+            }else {
+                alert("The Strings is not contain upper char")
+            }
+        }
+        return count
+    }
+
+    alert("số ký tự viết hoa là"+count)
+</script>
+</body>
+</html>

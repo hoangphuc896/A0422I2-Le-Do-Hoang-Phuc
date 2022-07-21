@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=parseInt(prompt("nhập số phần tử của mảng"))
+    let arr = []
+    let count=0
+    let count1=0
+    let total
+    for (let i=0;i<=n-1;i++){
+        if (n<=20){
+        arr[i]=parseInt(prompt("nhập các phần tử của mảng"))
+        }else {
+            alert("xin lỗi bạn nhập quá số lần cho phép")
+            break;
+        }
+    }
+    for (let i=0;i<arr.length-1;i++){
+        if (arr[i]%2===0){
+            count +=arr[i]
+        }else {
+            count1+=arr[i]
+        }
+    }
+    total=count1-count
+    alert("mảng arr là"+arr+"kết quả của mảng này là"+total)
+</script>
+</body>
+</html>

@@ -6,23 +6,23 @@
 </head>
 <body>
 <script>
-    // let circle=function (radius) {
-    //     this.radius=radius;
-    //
-    //     this.getRadius = function () {
-    //         return  radius;
-    //     }
-    //     this.getArea = function () {
-    //         return Math.PI*radius*radius;
-    //     }
-    // }
-    //
-    // let circle2 = new circle(2);
-    // let radius =circle2.getRadius();
-    // let area = circle2.getArea();
-    // alert("radius:"+radius+";area:"+area);
+    let circle=function (radius) {
+        this.radius=radius;
 
-    // //
+        this.getRadius = function () {
+            return  radius;
+        }
+        this.getArea = function () {
+            return Math.PI*radius*radius;
+        }
+    }
+
+    let circle2 = new circle(2);
+    let radius =circle2.getRadius();
+    let area = circle2.getArea();
+    alert("radius:"+radius+";area:"+area);
+
+    //
 
 
 </script>

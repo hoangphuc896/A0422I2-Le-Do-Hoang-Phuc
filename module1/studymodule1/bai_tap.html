@@ -5,8 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+<p id="result"></p>
+<button onclick="menu()">Mua vé</button>
+<button onclick="displayResult()">xem kết quả</button>
+
 <script>
-    // //bài1
+    //bài1
     // for (let i=0;i<4;i++){
     //     for (let j=0;j<5;j++){
     //         if (i===0||i===3||j===0||j===4){
@@ -30,9 +34,9 @@
     //     document.write("<br>")
     // }
     //
-
-    // bài3
-
+    //
+    // // bài3
+    //
     // for(let i=0;i<5;i++){
     //     for (let j=0;j<5;j++){
     //         if (i<4-j){
@@ -43,7 +47,7 @@
     //         }
     //     document.write("<br>")
     //     }
-
+    //
     // // bài4
     //
     // for (let i=0;i<5;i++){
@@ -57,6 +61,9 @@
     //     document.write("<br>")
     // }
     //
+    //
+    //
+
     // // phần 2 bài 1
     //
     // let a=parseFloat(prompt("nhập mức lương"))
@@ -77,6 +84,8 @@
     //         }
     //     }
     //     alert("thuế thu nhập của bạn là:"+b+"triệu"+"lương của bạn là"+c+"triệu")
+
+
 
     // // bài 2
     //
@@ -116,6 +125,9 @@
     //
     // document.write(b)
 
+
+
+
     // phần 3 bài 2
 
     // let n=parseInt(prompt("số phần tử"))
@@ -133,24 +145,412 @@
     //         c.push(b[k])
     //     }
     // }
+    // c.sort(function (a,b) {
+    //     return a- b   })
     // alert(c)
+
+
+
 
     // phần 3 bài 3
     // let n=parseInt(prompt("nhập số phần tử"))
     // let a=[]
     // let b=[]
-    // let c=0
+    // let index=0
     // for (let i=0;i<n;i++){
     //     a[i]=parseInt(prompt("nhập các số 1"))
     // }
     // for (let j=0;j<n;j++){
     //     b[j]=parseInt(prompt("nhập các số 2"))
     // }
+    // let max=a[0]/b[0]
     // for (let k=0;k<n;k++){
-    //
+    //     let maxs=a[k]/b[k]
+    //     if (maxs>=max){
+    //         max=maxs
+    //         index=k
+    //     }
     // }
-    // alert(c)
+    // alert("phân số lớn nhất:"+max+"vị trí phân số lớn nhất"+index)
 
+
+
+    // // // phần 3 bài 4
+    // let number = prompt("nhập số cần tìm")
+    // let strNumber =['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín']
+    // let result =''
+    //  for (let i=0;i<number.length;i++){
+    //      result += strNumber[number[i]]
+    // }
+    // alert(result)
+    // phần 3 bài 5
+    // let drinks = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa', 'Thanh toán'];
+    // let prices = [15000, 20000, 18000, 17000, 8000, 15000];
+    // let totalMoney = 0
+    // document.write('<table>' +
+    //     '<tr>' +
+    //     '<th>No.</th>' +
+    //     '<th>Drinks</th>' +
+    //     '<th></th>' +
+    //     '</tr>')
+    // for (i = 1; i < 8; i++) {
+    //     document.write('<tr>' +
+    //         '<td align="center">'+i+'</td>' +
+    //         '<td>'+drinks[i-1]+'</td>' +
+    //         '<td align="center"><button onclick="selectDrink('+(i-1)+')">Select</button></td>' +
+    //         '</tr>')
+    // }
+    // function selectDrink(i) {
+    //     if (i < 6) {
+    //         let number = parseInt(prompt('Đơn giá: ' + prices[i] + '. Vui lòng chọn số lượng: '))
+    //         totalMoney += prices[i] * number;
+    //     } else {
+    //         alert('Tổng tiền bạn phải trả là '+ totalMoney);
+    //         totalMoney = 0;
+    //     }
+    // }
+
+
+
+    //  phần 3 bài 5 cách 2
+    //     let menu= "Mời bạn chọn đồ uống \n"+
+    //             "1. Cafe \n"+
+    //             "2. Cam vắt\n"+
+    //             "3. Nước ép cà rốt\n"+
+    //             "4. Nước ép cà chua\n"+
+    //             "5. Nước lọc \n"+
+    //             "6. Nước dừa\n"+
+    //             "7.Thoát chọn đồ uống";
+    //     let choose;
+    //     let total=0;
+    //     do{
+    //         choose=parseInt(prompt(menu));
+    //         let amount =0
+    //         let price =0
+    //         switch (choose) {
+    //         case 1:
+    //             price = 10000;
+    //             break;
+    //             case 2:
+    //                 price = 15000;
+    //                 break;
+    //                 case 3:
+    //                     price= 17000;
+    //                     break;
+    //                     case 4:
+    //                         price= 18000;
+    //                         break;
+    //                         case 5:
+    //                             price= 7000;
+    //                             break;
+    //                             case 6:
+    //                                 price= 12000;
+    //                                 break;
+    //                                 case 7:
+    //                                     continue;
+    //         }
+    //         amount = parseInt(prompt("nhập vào số lượng đồ uống"));
+    //         total +=amount *price;
+    //     }while (choose!==7);
+    //     alert("tổng số tiền người dùng phải trả là"+ total)
+
+        // phần 4 bài 1
+        // let a = prompt("nhập các ký tự");
+        // let b = a.toLowerCase().split(" ")
+        // for (let i=0;i<b.length;i++){
+        //     b[i]=b[i].charAt(0).toUpperCase()+b[i].slice(1)
+        // }
+        // b = b.join(" ")
+        // alert(b)
+
+        // phần 4 bài 2
+
+        // let a = prompt("nhập các ký tự")
+        // let b =''
+        // for(let i=0;i<a.length;i++){
+        //     if (b.indexOf(a[i])===-1){
+        //          b += a[i]
+        //     }
+        // }
+        // alert("có"+b.length+"ký tự là"+b)
+
+    // phần 4 bài 3
+    // function commonCharacterCount(s1,s2) {
+    //     let arr1 = s1.split("");
+    //     let arr2 = s2.split("");
+    //     let count=0;
+    //     for(let i=0;i<arr1.length;i++){
+    //         for (let j=0;j<arr2.length;j++){
+    //             if(arr1[i]===arr2[j]){
+    //                 count++;
+    //                 arr1.splice(i,1);
+    //                 arr2.splice(j,1);
+    //                 i--;
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     return count;
+    // }
+    // let s1 =prompt("nhập vào xâu 1");
+    // let s2 =prompt("nhập vào xầu 2");
+    // alert("số lượng ký tự giống nhau là:" + commonCharacterCount(s1, s2));
+
+
+
+    // phần 5 bài 1
+    // let n = parseInt(prompt("nhập phần tử trong mảng a"))
+    // let m = parseInt(prompt("nhập phần tử trong mảng b"))
+    // let arr = []
+    // for (let i=0;i<n;i++){
+    //         arr[i]=[]
+    //     for(let j=0;j<m;j++){
+    //         arr[i][j]=parseInt(prompt("nhập các phần tử trong mảng"))
+    //     }
+    // }
+    // total=0
+    // for (let i=0;i<n;i++){
+    //     for (let j=0;j<m;j++){
+    //         if (arr[i][j]%2===0){
+    //             total +=arr[i][j]
+    //         }
+    //     }
+    // }
+    // document.write(total)
+
+    // phần 5 bài 2
+    //
+    // let n=parseInt(prompt("nhập số phân tử 1"))
+    // let m=parseInt(prompt("nhập số phân tử 2"))
+    // let arr=[]
+    // let row=[]
+    // for (let i=0;i<n;i++){
+    //     arr[i]=[]
+    //     for(let j=0;j<m;j++){
+    //         arr[i][j]=parseInt(prompt("nhập phần tử"))
+    //     }
+    // }
+   // function checkPrime(number) {
+   //  if(number<2){
+   //       return false
+   //  }
+   //  for (let i=2;i<=Math.sqrt(number);i++){
+   //      if(number%i===0){
+   //          return false;
+   //      }
+   //   }
+   //  return true;
+   //      }
+   //  for (let i=0;i<arr.length;i++){
+   //      for (let j=0;j<arr[i].length;j++){
+   //          if (checkPrime(arr[i][j])){
+   //              row.push(arr[i][j])
+   //          }
+   //      }
+   //  }
+   //  console.table(arr)
+   //  console.table(row)
+
+
+    // -----------------------------------------------------------------
+    // phần 5 bài 3
+    // let n=parseInt(prompt("nhập số phân tử 1"))
+    // let m=parseInt(prompt("nhập số phân tử 2"))
+    // let arr=[]
+    // for (let i=0;i<n;i++){
+    //     arr[i]=[]
+    //     for(let j=0;j<m;j++){
+    //         arr[i][j]=parseInt(prompt("nhập phần tử"))
+    //     }
+    // }
+    // function findMaxAndMin(arr) {
+    // let max = arr[0][0];
+    //     let min = arr[0][0];
+    //     for (let i=0;i<arr.length;i++) {
+    //         for (let j = 0; j < arr[i].length; j++) {
+    //             if (max < arr[i][j]) {
+    //                 max = arr[i][j]
+    //             }
+    //             if (min > arr[i][j]) {
+    //                 min = arr[i][j];
+    //             }
+    //         }
+    //     }
+    //     console.log(arr);
+    //     alert("phần tử lớn nhất là:"+max+"\n phần tử bé nhất là:" + min);
+    // }
+    // findMaxAndMin(arr)
+
+
+    // phần 6
+
+    class Lotery{
+        constructor(number1, number2, number3, number4, number5, number6, grade = "") {
+            this.number1 = number1;
+            this.number2 = number2;
+            this.number3 = number3;
+            this.number4 = number4;
+            this.number5 = number5;
+            this.number6 = number6;
+            this.grade = grade;
+        }
+        setNumber1(num1){
+            this.number1= num1;
+        }
+        getNumber1(){
+            return this.number1
+        }
+        setNumber2(num2){
+            this.number2=num2;
+        }
+        getNumber2(){
+            return this.number2
+        }
+        setNumber3(num3){
+            this.number3= num3;
+        }
+        getNumber3(){
+            return this.number3
+        }
+        setNumber4(num4){
+            this.number4= num4;
+        }
+        getNumber4(){
+            return this.number4
+        }
+        setNumber5(num5){
+            this.number5= num5;
+        }
+        getNumber5(){
+            return this.number5
+        }
+        setNumber6(num6){
+            this.number6= num6;
+        }
+        getNumber6(){
+            return this.number6
+        }
+        setGrade(grade){
+            this.grade= grade;
+        }
+        getGrade(){
+            return this.grade
+        }
+        getNumber(){
+            return [this.number1,this.number2,this.number3,this.number4,this.number5,this.number6];
+        }
+        getRandomNumber(){
+            this.setNumber1(Math.floor(Math.random() * 99));
+            this.setNumber2(Math.floor(Math.random() * 99));
+            this.setNumber3(Math.floor(Math.random() * 99));
+            this.setNumber4(Math.floor(Math.random() * 99));
+            this.setNumber5(Math.floor(Math.random() * 99));
+            this.setNumber6(Math.floor(Math.random() * 99));
+        }
+        getInfo(){
+            return"vé số"+this.getNumber().join(" ")+this.grade;
+
+        }
+    }
+let arrlottery = [];
+    function menu() {
+        let choose;
+        if (arrlottery.length<4){
+            choose=parseInt(prompt("Bạn có 2 sự lựa chọn \n"+
+            "1. Bạn Muốn tự chọn số.\n"+
+            "2. hệ thống tự chọn."));
+            if (choose===1){
+                inputLotter();
+            }else if (choose===2){
+                randomLotter();
+            }
+        }else {
+            alert("bạn chỉ được mua 4 lần")
+        }
+
+    }
+    function drawlottery(arr) {
+    let lotterry;
+    let str = "" ;
+    for (let i=0;i<arr.length;i++){
+        str +="<input value='" + arr[i].getNumber1() + "'>"+
+                "<input value='" + arr[i].getNumber2() + "'>"+
+                "<input value='" + arr[i].getNumber3() + "'>"+
+                "<input value='" + arr[i].getNumber4() + "'>"+
+                "<input value='" + arr[i].getNumber5() + "'>"+
+                "<input value='" + arr[i].getNumber6() + "'>"+"<br>"
+    }
+    document.getElementById("result").innerHTML = str;
+    }
+    function randomLotter() {
+    let lottery= new Lotery();
+    lottery.getRandomNumber();
+    arrlottery.push(lottery);
+    drawlottery(arrlottery)
+    }
+    function inputLotter() {
+        let arrNum = [];
+        for (let i=0;i<6;i++){
+            arrNum[i] = parseInt(prompt("nhập vào số thứ"+(i+1)+"của vé số"))
+        }
+        let lottery= new Lotery(arrNum[0], arrNum[1], arrNum[2], arrNum[3], arrNum[4], arrNum[5]);
+        arrlottery.push(lottery);
+        drawlottery(arrlottery);
+    }
+    function checkResult(lotery) {
+        let count = 0;
+        let arr = [];
+        for (let i=0;i<6;i++){
+            arr[i]=Math.floor(Math.random() * 99)
+        }
+        alert(arr)
+        for (let i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] === lotery.getNumber()[i]) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        switch (count) {
+            case 6:
+                lotery.setGrade(1);
+                break;
+            case 5:
+                lotery.setGrade(2);
+                break;
+            case 4:
+            case 3:
+                lotery.setGrade(3)
+                break;
+            default:
+                lotery.setGrade(4);
+        }
+    }
+        function displayResult() {
+            let result = "";
+            for (let i = 0; i < arrlottery.length; i++) {
+                checkResult(arrlottery[i]);
+                switch ((arrlottery[i].getGrade())) {
+                    case 1:
+                        result += "giải nhất"
+                        break;
+                    case 2:
+                        result += "giải nhì"
+                        break;
+                    case 3:
+                        result += "giải khuyến khích"
+                        break;
+                }
+            }
+            if(result===""){
+                alert("chúc bạn may mắn lần sau")
+            }
+            else {
+                alert("chúc mừng bạn trúng giải"+result)
+            }
+        }
 </script>
 </body>
 </html>
+<!--Patient=Bệnh nhân-->
+<!--Địa chỉ= Address-->
