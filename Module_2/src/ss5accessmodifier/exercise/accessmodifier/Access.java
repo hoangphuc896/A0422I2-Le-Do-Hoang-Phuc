@@ -7,7 +7,7 @@ public class Access {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the radius: ");
         double radius = scanner.nextDouble();
-        class_access area = new class_access(radius);
+        ClassAccess area = new ClassAccess(radius);
         area.getRadius();
         area.getArea();
         System.out.println("radius="+area.getRadius()+"area=" +area.getArea());

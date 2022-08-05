@@ -14,12 +14,12 @@ public class class_circlevscylinder {
         circle area = new circle();
         area.setRadius(radius);
         area.getArea();
-        cylinder volume= new cylinder();
+        cylinder volume = new cylinder();
         volume.setHeight(height);
         volume.setRadius(radius);
         volume.getVolume();
         volume.setColor(color);
         volume.getColor();
-        System.out.println("color:"+ volume.getColor()+"\n"+"area:"+area.getArea()+"\n"+"volume:"+volume.getVolume());
+        System.out.println("color:" + volume.getColor() + "\n" + "area:" + area.getArea() + "\n" + "volume:" + volume.getVolume());
     }
 }
