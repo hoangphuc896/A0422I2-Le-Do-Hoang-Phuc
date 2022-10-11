@@ -10,7 +10,7 @@ public class PrimeDisplay {
         System.out.printf("%d number prime first: \n", number );
         int count = 0;
         int i = 2;
-        while (count <=20) {
+        while (count <=number) {
             if (checkPrime(i)) {
                 System.out.print(i + " ");
                 count++;

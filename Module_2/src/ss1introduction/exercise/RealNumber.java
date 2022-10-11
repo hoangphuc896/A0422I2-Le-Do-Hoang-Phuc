@@ -94,6 +94,6 @@ public class RealNumber {
     }
 
     private static String hunredUp(String number) {
-        return tenDown(number) + " hunred";
+        return tenDown(number) + " hundred";
     }
 }

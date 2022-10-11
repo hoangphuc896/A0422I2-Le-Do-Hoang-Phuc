@@ -1,17 +1,21 @@
 package casestudymodule2.models;
 
-public class Customer extends Person{
+import java.io.Serializable;
+import java.util.Date;
+
+public class Customer extends Person {
     private String typeCustomer ;
     private String address ;
 
     public Customer(){
 
     }
-    public Customer(int id, String name, int age, String sex, String idCard, String email, String typeCustomer ,String address){
-        super(id, name, age, sex, idCard, email);
+    public Customer(int id, String name, Date birthday, String sex, String idCard, String email, String typeCustomer , String address){
+        super(id, name, birthday, sex, idCard, email);
         this.typeCustomer = typeCustomer ;
         this.address = address;
     }
+
 
     public String getTypeCustomer() {
         return typeCustomer;

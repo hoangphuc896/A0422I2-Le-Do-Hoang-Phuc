@@ -13,7 +13,7 @@ public class Villa extends Facility {
                  double areaUse,
                  int rentalPrice,
                  int rentalPeopleMax,
-                 String styleRental ,
+                 String styleRental,
                  String standardVilla ,
                  double areaPool ,
                  int floor){
@@ -22,6 +22,7 @@ public class Villa extends Facility {
         this.areaPool =areaPool;
         this.floor = floor;
     }
+
 
     public String getStandardVilla() {
         return standardVilla;

@@ -1,9 +1,13 @@
 package casestudymodule2.models;
 
-public abstract class Person {
+import java.io.Serializable;
+import java.util.Date;
+
+public abstract class Person implements Serializable {
+    private static final long serialVersionUID = 2906642554793891381L;
     private int id;
     private String name;
-    private int age;
+    private Date birthday;
     private String sex;
     private String idCard;
     private String email;
@@ -11,10 +15,10 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, int age, String sex, String idCard, String email) {
+    public Person(int id, String name, Date birthday, String sex, String idCard, String email) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.birthday = birthday;
         this.sex = sex;
         this.idCard = idCard;
         this.email = email;
@@ -36,23 +40,48 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public Date getBirthday(Date birthday) {
+        return birthday;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     @Override
     public String toString() {
         return
                 "id=" + id +
-                        ", name='" + name + '\'' +
-                        ", age=" + age +
-                        ", sex='" + sex + '\'' +
-                        ", idCard='" + idCard + '\'' +
-                        ", email='" + email + '\'';
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", sex='" + sex + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", email='" + email + '\'' ;
     }
 }
 

@@ -1,5 +1,7 @@
 package casestudymodule2.models;
 
+import java.util.Date;
+
 public class Employee extends Person {
     private String lever;
     private String position;
@@ -9,14 +11,8 @@ public class Employee extends Person {
 
     }
 
-    public Employee(int id, String name, int age, String sex, String idCard, String email, String lever, String position, int salary) {
-        super(id, name, age, sex, idCard, email);
-        this.lever = lever;
-        this.position = position;
-        this.salary = salary;
-    }
-
-    public Employee(String lever, String position, int salary) {
+    public Employee(int id, String name, Date birthday, String sex, String idCard, String email, String lever, String position, int salary) {
+        super(id, name, birthday, sex, idCard, email);
         this.lever = lever;
         this.position = position;
         this.salary = salary;

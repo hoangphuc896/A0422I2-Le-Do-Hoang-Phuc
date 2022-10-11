@@ -1,11 +1,12 @@
 package casestudymodule2.services;
 
+import casestudymodule2.exception.UserException;
 import casestudymodule2.models.Employee;
+import casestudymodule2.ultils.ReadAndWrite;
+import casestudymodule2.validate.Validator;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class EmployeeServiceImpl implements EmployeeService {
     private static List<Employee> employeeList = new ArrayList<>();
@@ -15,7 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
 
     public void display() {
-        for (Employee employee:employeeList){
+        employeeList = (List<Employee>) ReadAndWrite.read("D:\\Codegym\\Module_2\\src\\data\\employee.csv");
+        for (Employee employee : employeeList) {
             System.out.println(employee.toString());
         }
     }
@@ -26,8 +28,19 @@ public class EmployeeServiceImpl implements EmployeeService {
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter name :");
         String name = scanner.nextLine();
-        System.out.println("Enter age : ");
-        int age = Integer.parseInt(scanner.nextLine());
+
+        Date birthday ;
+        do {
+            System.out.println("Enter Birthday : ");
+            String dateAsString = scanner.nextLine();
+            try {
+                birthday = Validator.ValidateBirthday(dateAsString);
+                break;
+            } catch (UserException e) {
+                System.out.println(e.getMessage());
+            }
+
+        }while (true);
         System.out.println("Enter sex :  ");
         String sex = scanner.nextLine();
         System.out.println("Enter idCard : ");
@@ -39,23 +52,45 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Enter position : ");
         String position = scanner.nextLine();
         System.out.println("Enter salary");
-        int salary =  Integer.parseInt(scanner.nextLine());
-        Employee employee = new Employee(id , name , age , sex , idCard , email , lever , position , salary);
+        int salary = Integer.parseInt(scanner.nextLine());
+        Employee employee = new Employee(id, name, birthday, sex, idCard, email, lever, position, salary);
         employeeList.add(employee);
+        ReadAndWrite.write(employeeList, "D:\\Codegym\\Module_2\\src\\data\\employee.csv");
     }
 
     @Override
     public void edit() {
-        System.out.println("Enter id : ");
+        System.out.println("Enter find id");
         int id = Integer.parseInt(scanner.nextLine());
-        System.out.println("Change lever : ");
-        String lever = scanner.nextLine();
-        System.out.println("Change position");
-        String position = scanner.nextLine();
-        System.out.println("Change salary");
-        int  salary = scanner.nextInt();
-        Employee employee = new Employee(lever , position , salary);
-        employeeList.set(id , employee);
+        boolean isExisted = false;
+        int size = employeeList.size();
+        for (int i = 0; i < size; i++) {
+            if (employeeList.get(i).getId() == id) {
+                isExisted = true;
+                System.out.println("Enter Change Name : ");
+                employeeList.get(i).setName(scanner.nextLine());
+                System.out.println("Enter Change Birdth : ");
+                employeeList.get(i).setBirthday(new Date(Date.parse(scanner.nextLine())));
+                System.out.println("Enter Change Sex : ");
+                employeeList.get(i).setSex(scanner.nextLine());
+                System.out.println("Enter Change IdCard : ");
+                employeeList.get(i).setIdCard(scanner.nextLine());
+                System.out.println("Enter Change Email : ");
+                employeeList.get(i).setEmail(scanner.nextLine());
+                System.out.println("Enter Change Lever : ");
+                employeeList.get(i).setLever(scanner.nextLine());
+                System.out.println("Enter Change Position : ");
+                employeeList.get(i).setPosition(scanner.nextLine());
+                System.out.println("Enter Change Salary : ");
+                employeeList.get(i).setSalary(Integer.parseInt(scanner.nextLine()));
+                break;
+            }
+        }
+        if (!isExisted){
+            System.out.printf("id = %d not existed.\n", id);
+        }else {
+            System.out.println(employeeList);
+        }
     }
 
     @Override

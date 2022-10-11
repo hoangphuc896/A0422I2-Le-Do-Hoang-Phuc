@@ -1,7 +1,5 @@
 package casestudymodule2.models;
 
-import com.sun.org.apache.xpath.internal.objects.XString;
-
 public abstract class Facility {
     private String idFacility;
     private String nameService;

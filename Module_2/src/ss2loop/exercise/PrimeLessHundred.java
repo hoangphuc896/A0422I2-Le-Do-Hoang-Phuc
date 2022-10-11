@@ -24,10 +24,11 @@ public class PrimeLessHundred {
         if (Number == 2) {
             return true;
         }
-        for (int i = 2; i < Math.sqrt(Number); i++) {
+        for (int i = 2; i <= Math.sqrt(Number); i++) {
             if (Number % i == 0) {
                 return false;
             }
+
         }
         return true;
     }
