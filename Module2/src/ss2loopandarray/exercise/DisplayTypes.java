@@ -1,4 +1,4 @@
-package ss2loop.exercise;
+package ss2loopandarray.exercise;
 
 import java.util.Scanner;
 

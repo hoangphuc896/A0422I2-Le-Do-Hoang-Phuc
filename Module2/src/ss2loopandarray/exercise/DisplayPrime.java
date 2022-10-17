@@ -1,6 +1,4 @@
-package ss2loop.exercise;
-
-import java.util.Scanner;
+package ss2loopandarray.exercise;
 
 public class DisplayPrime {
     public static void main(String[] args) {
