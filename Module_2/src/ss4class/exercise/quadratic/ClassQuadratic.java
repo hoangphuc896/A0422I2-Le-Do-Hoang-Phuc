@@ -1,4 +1,4 @@
-package ss4_class.exercise.quadratic;
+package ss4class.exercise.quadratic;
 
 public class ClassQuadratic {
     private double a, b, c;

@@ -1,4 +1,4 @@
-package ss4_class.exercise.stopwatch;
+package ss4class.exercise.stopwatch;
 
 import ss4class.exercise.stopwatch.stopwatch;
 

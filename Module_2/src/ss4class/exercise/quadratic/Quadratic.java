@@ -1,8 +1,8 @@
-package ss4_class.exercise.quadratic;
+package ss4class.exercise.quadratic;
 
 import java.util.Scanner;
 
-public class Quadratic {
+public class  Quadratic {
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
         System.out.println("Enter value a :");
@@ -15,7 +15,7 @@ public class Quadratic {
         double delta = equatic.getDiscriminant();
         System.out.println("delta ="+ delta);
         if (delta>=0){
-            System.out.printf("The equation has tow roots : x1=%.2f , x2=%.2f",equatic.getRoot1(),equatic.getRoot2());
+            System.out.printf("The equation has two roots : x1=%.2f , x2=%.2f",equatic.getRoot1(),equatic.getRoot2());
         }else if (delta==0){
             System.out.printf("The equation has one roots : x = %.2f",equatic.getDiscriminant());
         }else {
