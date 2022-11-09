@@ -4,9 +4,10 @@ public class Booking {
     private Integer idBooking;
     private String starDate;
     private String endDate;
-    private Customer customer ;
+    private Customer customer;
     private Facility facility;
-    public Booking(){
+
+    public Booking() {
 
     }
 

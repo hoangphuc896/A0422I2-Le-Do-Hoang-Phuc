@@ -8,7 +8,6 @@ public class MyList<E> {
     private E[] elements;
 
     public MyList() {
-        E[] elements = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
     public MyList(int capacity) {
@@ -48,7 +47,7 @@ public class MyList<E> {
 
     public boolean contains(E o) {
         for (Object element : elements) {
-            if (element.equals(0)) {
+            if (element.equals(o)) {
                 return true;
             }
         }
@@ -56,12 +55,12 @@ public class MyList<E> {
     }
 
     public int indexOf(E o) {
-    for(int i=0;i<size;i++){
-        if (elements.equals(0)){
-            return i;
+        for (int i = 0; i < size; i++) {
+            if (elements.equals(o)) {
+                return i;
+            }
         }
-    }
-    return -1;
+        return -1;
     }
 
     public boolean add(E e) {
@@ -74,7 +73,7 @@ public class MyList<E> {
     }
 
     public void ensureCapacity(int minCapacity) {
-            elements = Arrays.copyOf(elements, minCapacity);
+        elements = Arrays.copyOf(elements, minCapacity);
     }
 
     public E get(int i) {
@@ -82,8 +81,8 @@ public class MyList<E> {
     }
 
     public void clean() {
-        for (int i=0;i<size;i++){
-            elements[i]=null;
+        for (int i = 0; i < size; i++) {
+            elements[i] = null;
         }
     }
 

@@ -3,7 +3,7 @@ package ss11stackvsqueue.exercise.practiceusingqueues;
 public class QueueTest {
     public static void main(String[] args) {
         Queue<Integer> queue = new Queue<>();
-        Solution solution = new Solution();
+        Solution<Integer> solution = new Solution<>();
 
         solution.enQueue(queue, 1);
         solution.enQueue(queue, 2);

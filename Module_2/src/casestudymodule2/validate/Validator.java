@@ -11,7 +11,7 @@ public class Validator {
     public static Date ValidateBirthday(String BirthdayAsString) throws UserException {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         format.setLenient(false);
-        Date birthday = null;
+        Date birthday;
         try {
             birthday = format.parse(BirthdayAsString);
             Date now = new Date();

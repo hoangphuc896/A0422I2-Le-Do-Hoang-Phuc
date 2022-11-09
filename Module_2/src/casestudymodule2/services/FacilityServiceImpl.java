@@ -1,6 +1,7 @@
 package casestudymodule2.services;
 
 import casestudymodule2.models.*;
+import casestudymodule2.ultils.RegexData;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -51,7 +52,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addNewVilla() {
-        String idFacility  = scanner.nextLine();
+        String idFacility  = inputId();
         System.out.println("Enter nameService :");
         String nameService = scanner.nextLine();
 
@@ -105,10 +106,10 @@ public class FacilityServiceImpl implements FacilityService {
         System.out.println("Enter New villa");
     }
 
-//    private String inputId(){
-//        System.out.println("nhập id, mã dịch vụ :");
-//        return RegexData.regexStr(scanner.nextLine(),REGEX_ID_VILLA,"bạn đã nhập sai mã định dạnh");
-//    }
+    private String inputId(){
+        System.out.println("nhập id, mã dịch vụ :");
+        return RegexData.regexStr(scanner.nextLine(),REGEX_ID_VILLA,"bạn đã nhập sai mã định dạnh");
+    }
 
     @Override
     public void addNewHouse() {
@@ -196,5 +197,4 @@ public class FacilityServiceImpl implements FacilityService {
         facilityIntegerMap.put(room, 0);
         System.out.println("Enter New Room");
     }
-
 }

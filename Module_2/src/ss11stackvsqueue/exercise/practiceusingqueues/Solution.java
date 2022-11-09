@@ -2,12 +2,13 @@ package ss11stackvsqueue.exercise.practiceusingqueues;
 
 public class Solution<T> {
     Queue<T> queue;
-    public Solution(){
-        queue =new Queue<T>();
-    }
-    public void enQueue(Queue q, T value){
-        Node newNode = new Node(value);
 
+    public Solution() {
+        queue = new Queue<T>();
+    }
+
+    public void enQueue(Queue q, T value) {
+        Node newNode = new Node(value);
 
         if (q.getFront() == null) {
             q.setFront(newNode);
@@ -36,12 +37,12 @@ public class Solution<T> {
         }
     }
 
-    //
+
     public void displayQueue(Queue q) {
         Node temp = q.getFront();
 
         if (q.getFront() == null) {
-            throw new IndexOutOfBoundsException ("Queue is empty.");
+            throw new IndexOutOfBoundsException("Queue is empty.");
         }
     }
 }

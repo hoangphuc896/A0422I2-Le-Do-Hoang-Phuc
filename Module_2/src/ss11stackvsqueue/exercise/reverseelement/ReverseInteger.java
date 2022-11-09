@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ReverseInteger {
+public class    ReverseInteger {
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter size of array ");
         int size = scanner.nextInt();
@@ -18,7 +18,7 @@ public class ReverseInteger {
         }
         System.out.println("Array before reverse: " + Arrays.toString(number));
         for (int i = 0; i < size; i++) {
-            number[i] = (Integer) stack.pop();
+            number[i] = stack.pop();
         }
         System.out.println("Array after reverse: " + Arrays.toString(number));
     }

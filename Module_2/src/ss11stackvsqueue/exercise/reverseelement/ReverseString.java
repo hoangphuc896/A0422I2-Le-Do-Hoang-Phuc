@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class ReverseString {
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack<String> stack = new Stack<String>();
         String string = "Hello CodeGym";
         String[] mWord = string.split("");
         System.out.println(Arrays.toString(mWord));
@@ -14,7 +14,7 @@ public class ReverseString {
         }
         String outp = "";
         for (int i = 0; i < mWord.length; i++) {
-            mWord[i] = (String) stack.pop();
+            mWord[i] = stack.pop();
             outp += mWord[i];
         }
         System.out.println(outp);
