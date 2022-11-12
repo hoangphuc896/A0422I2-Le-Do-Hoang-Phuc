@@ -54,6 +54,9 @@ public class ProductManager {
         if (producter != null) {
             products.remove(producter);
             System.out.println("Delete product");
+            for (Product product:products){
+                System.out.println(product.toString());
+            }
         } else {
             System.out.printf("id = %d not existed.\n", id);
         }
