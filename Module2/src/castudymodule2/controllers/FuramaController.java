@@ -2,6 +2,7 @@ package castudymodule2.controllers;
 
 import castudymodule2.services.lmpl.CustomerServiceImpl;
 import castudymodule2.services.lmpl.EmployeeServiceImpl;
+import castudymodule2.services.lmpl.FacilityServiceImpl;
 import castudymodule2.ultils.AgeException;
 
 import java.io.Serializable;
@@ -29,7 +30,7 @@ public class FuramaController implements Serializable {
                     displayCustomerMenu();
                     break;
                 case 3:
-
+                    displayFacilityMenu();
                     break;
                 case 4:
 
@@ -103,63 +104,62 @@ public class FuramaController implements Serializable {
             scanner.nextLine();
         }
     }
-//
-//    public static void displayFacilityMenu() {
-//        FacilityServiceImpl facilityService = new FacilityServiceImpl();
-//        boolean check = true;
-//        while (check) {
-//            System.out.println("1. Display list Facility");
-//            System.out.println("2. Add new Facility");
-//            System.out.println("3. Display list Facility maintenance :");
-//            System.out.println("4. Return main menu");
-//            Scanner scanner = new Scanner(System.in);
-//            switch (scanner.nextInt()) {
-//                case 1: {
-//                    facilityService.display();
-//                    break;
-//                }
-//                case 2: {
-//                    displayNewMenu();
-//                    break;
-//                }
-//                case 3: {
-//                    facilityService.displayMaintain();
-//                    break;
-//                }
-//                case 4: {
-//                    return;
-//                }
-//            }
-//            scanner.nextLine();
-//        }
-//    }
-//
-//    public static void displayNewMenu() {
-//        FacilityServiceImpl facilityService = new FacilityServiceImpl();
-//        boolean check = true;
-//        while (check) {
-//            System.out.println("1. Add New Villa");
-//            System.out.println("2. Add New House");
-//            System.out.println("3. Add New Room");
-//            System.out.println("4. Back to Menu");
-//            Scanner scanner = new Scanner(System.in);
-//            switch (scanner.nextInt()) {
-//                case 1:
-//                    facilityService.addNewVilla();
-//                    break;
-//                case 2:
-//                    facilityService.addNewHouse();
-//                    break;
-//                case 3:
-//                    facilityService.addNewRoom();
-//                    break;
-//                case 4:
-//                    return;
-//            }
-//            scanner.nextLine();
-//        }
-//    }
-//
+
+    public static void displayFacilityMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        boolean check = true;
+        while (check) {
+            System.out.println("1. Display list Facility");
+            System.out.println("2. Add new Facility");
+            System.out.println("3. Display list Facility maintenance :");
+            System.out.println("4. Return main menu");
+            Scanner scanner = new Scanner(System.in);
+            switch (scanner.nextInt()) {
+                case 1: {
+                    facilityService.displayList();
+                    break;
+                }
+                case 2: {
+                    displayNewMenu();
+                    break;
+                }
+                case 3: {
+                    break;
+                }
+                case 4: {
+                    return;
+                }
+            }
+            scanner.nextLine();
+        }
+    }
+
+    public static void displayNewMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        boolean check = true;
+        while (check) {
+            System.out.println("1. Add New Villa");
+            System.out.println("2. Add New House");
+            System.out.println("3. Add New Room");
+            System.out.println("4. Back to Menu");
+            Scanner scanner = new Scanner(System.in);
+            switch (scanner.nextInt()) {
+                case 1:
+                    facilityService.addNewVilla();
+                    break;
+                case 2:
+                    facilityService.addNewHouse();
+                    break;
+                case 3:
+                    facilityService.addNewRoom();
+                    break;
+                case 4:
+                    return;
+            }
+            scanner.nextLine();
+        }
+    }
+
 //    public static void displayBookingMenu() {
 //        BookingServiceImpl bookingService = new BookingServiceImpl();
 //        ContactServiceImpl contactService = new ContactServiceImpl();

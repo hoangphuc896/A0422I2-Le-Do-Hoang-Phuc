@@ -6,9 +6,7 @@ public class RegexFacility {
     public static final String FOMAT_IDVILLA = "SVVL-[0-9]{0,4}";
     public static final String FOMAT_IDHOUSE = "SVHO-[0-9]{0,4}";
     public static final String FOMAT_IDROOM = "SVRO-[0-9]{0,4}";
-    public static final String FOMAT_NAMESERVICE = "([A-Z][a-z ]*)+";
-    public static final String FOMAT_ROOMSTANDARD = "([A-Z][a-z ]*)+";
-    public static final String FOMAT_STYLERENTAL = "([A-Z][a-z ]*)+";
+    public static final String FOMAT_REGEXSERVICE = "([A-Z][a-z ]*)+";
     static Scanner scanner = new Scanner(System.in);
 
     public static String IdVilla() {
@@ -28,20 +26,35 @@ public class RegexFacility {
 
     public static String NameService() {
         System.out.println("Mời Bạn Nhập Tên Dịch Vụ");
-        return RegexData.regexStr(scanner.nextLine(), FOMAT_NAMESERVICE, "Bạn Nhập Sai Tên Dịch vụ Mời Bạn Nhập Lại");
+        return RegexData.regexStr(scanner.nextLine(), FOMAT_REGEXSERVICE, "Bạn Nhập Sai Tên Dịch vụ Mời Bạn Nhập Lại");
     }
 
     public static double areaService() {
-        System.out.println("Mời Bạn Nhập Diện tích Sử Dụng");
+        System.out.println("Mời Bạn Nhập Diện tích Diện tích Cần Sử dụng :");
         double area;
         do {
             try {
                 area = Integer.parseInt(scanner.nextLine());
+                break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
                 area = Integer.parseInt(scanner.nextLine());
             }
-        } while (area > 30);
+        } while (area < 30);
+        return area;
+    }
+    public static double areaPool() {
+        System.out.println("Mời Bạn Nhập Diện tích Diện tích Hồ Bơi Cần Sử dụng :");
+        double area;
+        do {
+            try {
+                area = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
+                area = Integer.parseInt(scanner.nextLine());
+            }
+        } while (area < 30);
         return area;
     }
 
@@ -55,7 +68,7 @@ public class RegexFacility {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
                 rental = Integer.parseInt(scanner.nextLine());
             }
-        } while (rental > 0);
+        } while (rental < 0);
         return rental;
     }
 
@@ -83,18 +96,23 @@ public class RegexFacility {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
                 floor = Integer.parseInt(scanner.nextLine());
             }
-        } while (floor > 0);
+        } while (floor < 0);
         return floor;
     }
 
 
     public static String roomStandard() {
         System.out.println("Mời Bạn Nhập Tiêu Chuẩn Phòng :");
-        return RegexData.regexStr(scanner.nextLine(), FOMAT_ROOMSTANDARD, "Bạn Nhập Sai Tiêu Chuẩn Phòng Mời Bạn Nhập Lại :");
+        return RegexData.regexStr(scanner.nextLine(), FOMAT_REGEXSERVICE, "Bạn Nhập Sai Tiêu Chuẩn Phòng Mời Bạn Nhập Lại :");
     }
 
     public static String styleRental() {
         System.out.println("Mời Bạn Nhập Kiểu Thuê :");
-        return RegexData.regexStr(scanner.nextLine(), FOMAT_STYLERENTAL, "Bạn Nhập Sai Kiểu Thuê Mời Bạn Nhập Lại :");
+        return RegexData.regexStr(scanner.nextLine(), FOMAT_REGEXSERVICE, "Bạn Nhập Sai Kiểu Thuê Mời Bạn Nhập Lại :");
+    }
+
+    public static String freeService(){
+        System.out.println("Mời Bạn Nhập Dịch Vụ Khuyến Mãi :");
+        return RegexData.regexStr(scanner.nextLine(),FOMAT_REGEXSERVICE,"Bạn Nhập Sai Dịch Vụ Khuyên mãi Mời Bạn Nhập Lại :");
     }
 }

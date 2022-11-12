@@ -14,8 +14,8 @@ public class Validator {
         try {
             birtDay = format.parse(BirtdayAsString);
             Date now = new Date();
-            if (now.getYear() - birtDay.getYear() < 18) {
-                throw new AgeException(Message.AGE_LESS_THAN_18);
+            if (now.getYear() - birtDay.getYear() < 18 || now.getYear() - birtDay.getYear() > 100) {
+                throw new AgeException(Message.AGE_LESS_THAN);
             }
             return birtDay;
         } catch (ParseException e) {

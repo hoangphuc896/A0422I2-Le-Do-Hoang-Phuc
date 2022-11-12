@@ -67,10 +67,9 @@ public class BookingServiceImpl implements BookingService {
         System.out.println("nhập id khách hàng : ");
         boolean check = true;
         int id = Integer.parseInt(scanner.nextLine());
-        while (check) {
+        while (true) {
             for (Customer customer : CustomerServiceImpl.customers) {
                 if (id == customer.getId()) {
-                    check = false;
                     return customer;
                 }
             }
@@ -79,7 +78,6 @@ public class BookingServiceImpl implements BookingService {
                 id = Integer.parseInt(scanner.nextLine());
             }
         }
-        return null;
     }
 
     public static Facility chooseFacility() {

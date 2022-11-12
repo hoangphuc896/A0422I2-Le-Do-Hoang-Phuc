@@ -2,17 +2,16 @@ package castudymodule2.services.lmpl;
 
 import castudymodule2.models.Facility;
 import castudymodule2.models.House;
+import castudymodule2.models.Room;
 import castudymodule2.models.Villa;
 import castudymodule2.services.FacilityService;
 import castudymodule2.ultils.RegexFacility;
-import castudymodule2.ultils.RegexPerson;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class FacilityServiceImpl implements FacilityService {
-    public static Map<Integer, Facility> facilityIntegerMap = new LinkedHashMap<>();
+    public static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
 
     @Override
     public void displayMaintenance() {
@@ -21,7 +20,10 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void displayList() {
-
+        System.out.println("Danh Sách đã Đặt");
+        for (Map.Entry<Facility,Integer> facility :facilityIntegerMap.entrySet()){
+            System.out.println("Service" + facility.getKey() + "number of times rented : " + facility.getValue());
+        }
     }
 
     @Override
@@ -33,10 +35,10 @@ public class FacilityServiceImpl implements FacilityService {
         int rentalPeopleMax = RegexFacility.rentalPeopleMax();
         String styleRental = RegexFacility.styleRental();
         String roomStandard = RegexFacility.roomStandard();
-        double areaPool = RegexFacility.areaService();
+        double areaPool = RegexFacility.areaPool();
         int floors = RegexFacility.floors();
         Villa villa = new Villa(idVilla, nameVilla, areaUse, rentalPrice, rentalPeopleMax, styleRental, roomStandard, areaPool, floors);
-        facilityIntegerMap.put(0, villa);
+        facilityIntegerMap.put(villa,0);
 
     }
 
@@ -51,7 +53,7 @@ public class FacilityServiceImpl implements FacilityService {
         String roomStandard = RegexFacility.roomStandard();
         int floor = RegexFacility.floors();
         House house = new House(idHouse,nameHouse,areaUse,rentalPrice,rentalPeopleMax,styleRental,roomStandard,floor);
-        facilityIntegerMap.put(0,house);
+        facilityIntegerMap.put(house,0);
     }
 
     @Override
@@ -62,5 +64,10 @@ public class FacilityServiceImpl implements FacilityService {
         int rentalPrice = RegexFacility.rentalPrice();
         int rentalPeopleMax = RegexFacility.rentalPeopleMax();
         String styleRental = RegexFacility.styleRental();
+        String freeService=RegexFacility.freeService();
+        Room room = new Room(idRoom,nameHouse,areaUse,rentalPrice,rentalPeopleMax,styleRental,freeService);
+        facilityIntegerMap.put(room,0);
     }
+
+
 }
