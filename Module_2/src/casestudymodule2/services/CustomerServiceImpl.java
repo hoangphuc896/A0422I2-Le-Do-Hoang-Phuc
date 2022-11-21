@@ -17,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void display() {
-        customers = (List<Customer>) ReadAndWrite.read("D:\\Codegym\\Module_2\\src\\data\\customer.csv");
+        ReadAndWrite.read("D:\\Codegym\\Module_2\\src\\data\\customer.csv");
         for (Customer customer : customers) {
             System.out.println(customers.toString());
         }

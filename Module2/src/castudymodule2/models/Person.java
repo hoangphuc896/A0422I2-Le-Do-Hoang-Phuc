@@ -1,10 +1,11 @@
 package castudymodule2.models;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class Person {
+public abstract class Person implements Serializable {
     static {
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     }
@@ -15,6 +16,9 @@ public abstract class Person {
     private String sex;
     private String idCard;
     private String email;
+
+    public Person() {
+    }
 
     public Person(String id, String name, Date birthday, String sex, String idCard, String email) {
         this.id = id;

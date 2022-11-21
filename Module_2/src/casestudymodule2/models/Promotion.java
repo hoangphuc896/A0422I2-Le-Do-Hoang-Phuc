@@ -41,5 +41,12 @@ public class Promotion {
         this.bookingDay = bookingDay;
     }
 
-
+    @Override
+    public String toString() {
+        return "Promotion{" +
+                "booking=" + booking +
+                ", bookingDay=" + bookingDay +
+                ", voucher='" + voucher + '\'' +
+                '}';
+    }
 }

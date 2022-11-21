@@ -46,7 +46,7 @@ public class BookingServiceImpl implements BookingService {
 
         bookingSet.add(booking);
         if (countBooking(facility.getIdFacility()) == 5) {
-            FacilityServiceImpl.listFacilityMaintain.put(facility.getIdFacility(), facility);
+            FacilityServiceImpl.listFacilityMaintain.put(facility, facility.getIdFacility());
         }
         System.out.println("Đã booking thành công");
 
@@ -65,7 +65,6 @@ public class BookingServiceImpl implements BookingService {
             System.out.println(customer.toString());
         }
         System.out.println("nhập id khách hàng : ");
-        boolean check = true;
         int id = Integer.parseInt(scanner.nextLine());
         while (true) {
             for (Customer customer : CustomerServiceImpl.customers) {
@@ -73,10 +72,8 @@ public class BookingServiceImpl implements BookingService {
                     return customer;
                 }
             }
-            if (check) {
-                System.out.println("Bạn đã nhập sai, vui lòng nhập lại id khách hàng :");
-                id = Integer.parseInt(scanner.nextLine());
-            }
+            System.out.println("Bạn đã nhập sai, vui lòng nhập lại id khách hàng :");
+            id = Integer.parseInt(scanner.nextLine());
         }
     }
 
@@ -86,7 +83,7 @@ public class BookingServiceImpl implements BookingService {
             System.out.println(entry.getKey().toString());
         }
         System.out.println("nhập id dịch vụ : ");
-        boolean check = false;
+        boolean check;
         String id = scanner.nextLine();
         while (true) {
             check = false;
@@ -112,7 +109,7 @@ public class BookingServiceImpl implements BookingService {
     public int countBooking(String id) {
         int count = 0;
         for (Booking booking : BookingServiceImpl.bookingSet) {
-            if (id == booking.getFacility().getIdFacility()) {
+            if (Objects.equals(id, booking.getFacility().getIdFacility())) {
                 count++;
             }
         }

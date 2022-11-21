@@ -1,8 +1,6 @@
 package castudymodule2.controllers;
 
-import castudymodule2.services.lmpl.CustomerServiceImpl;
-import castudymodule2.services.lmpl.EmployeeServiceImpl;
-import castudymodule2.services.lmpl.FacilityServiceImpl;
+import castudymodule2.services.lmpl.*;
 import castudymodule2.ultils.AgeException;
 
 import java.io.Serializable;
@@ -33,7 +31,7 @@ public class FuramaController implements Serializable {
                     displayFacilityMenu();
                     break;
                 case 4:
-
+                    displayBookingMenu();
                     break;
                 case 5:
                     break;
@@ -160,38 +158,38 @@ public class FuramaController implements Serializable {
         }
     }
 
-//    public static void displayBookingMenu() {
-//        BookingServiceImpl bookingService = new BookingServiceImpl();
-//        ContactServiceImpl contactService = new ContactServiceImpl();
-//        boolean check = true;
-//        while (check) {
-//            System.out.println("1. Add new Booking");
-//            System.out.println("2. Display list booking");
-//            System.out.println("3. Create new Contracts");
-//            System.out.println("4. Display list Contracts");
-//            System.out.println("5. Edit contracts");
-//            System.out.println("6. Return main menu");
-//            Scanner scanner = new Scanner(System.in);
-//            switch (scanner.nextInt()) {
-//                case 1:
-//                    bookingService.addBooking();
-//                    break;
-//                case 2:
-//                    bookingService.displayListBooking();
-//                    break;
-//                case 3:
-//                    contactService.createNewContract();
-//                    break;
-//                case 4:
-//                    contactService.displayListContract();
-//                    break;
-//                case 5:
-//                    contactService.editContract();
-//                    break;
-//                case 6:
-//                    return;
-//            }
-//            scanner.nextLine();
-//        }
-//    }
+    public static void displayBookingMenu() {
+        BookingServicelmpl bookingService = new BookingServicelmpl();
+        ContactServicelmpl contactService = new ContactServicelmpl();
+        boolean check = true;
+        while (check) {
+            System.out.println("1. Add new Booking");
+            System.out.println("2. Display list booking");
+            System.out.println("3. Create new Contracts");
+            System.out.println("4. Display list Contracts");
+            System.out.println("5. Edit contracts");
+            System.out.println("6. Return main menu");
+            Scanner scanner = new Scanner(System.in);
+            switch (scanner.nextInt()) {
+                case 1:
+                    bookingService.addBooking();
+                    break;
+                case 2:
+                    bookingService.displayList();
+                    break;
+                case 3:
+                    contactService.addNewContact();
+                    break;
+                case 4:
+                    contactService.displayList();
+                    break;
+                case 5:
+                    contactService.editContact();
+                    break;
+                case 6:
+                    return;
+            }
+            scanner.nextLine();
+        }
+    }
 }

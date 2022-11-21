@@ -1,6 +1,8 @@
 package castudymodule2.models;
 
-public abstract class  Facility {
+import java.io.Serializable;
+
+public abstract class  Facility  implements Serializable {
     private String idFacility;
     private String nameService;
     private double areaUse;

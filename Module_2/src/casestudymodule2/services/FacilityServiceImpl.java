@@ -17,7 +17,7 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     public static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
-    public static Map<String, Facility> listFacilityMaintain = new HashMap<>();
+    public static Map<Facility, String> listFacilityMaintain = new HashMap<>();
     public static Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -45,8 +45,8 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void displayMaintain() {
         System.out.println("Danh sach cac dinh vu dang duoc bao tri");
-        for (Map.Entry<String, Facility> entry : listFacilityMaintain.entrySet()) {
-            System.out.println(entry.getValue());
+        for (Map.Entry<Facility, String> entry : listFacilityMaintain.entrySet()) {
+            System.out.println(entry.getKey());
         }
     }
 

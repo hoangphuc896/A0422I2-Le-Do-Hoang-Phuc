@@ -1,9 +1,10 @@
 package castudymodule2.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Booking {
-    private String idBooking;
+public class Booking implements Serializable {
+    private int idBooking;
     private Date starTime;
     private Date endTime;
     private Customer customer;
@@ -12,7 +13,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(String idBooking, Date starTime, Date endTime, Customer customer, Facility facility) {
+    public Booking(int idBooking, Date starTime, Date endTime, Customer customer, Facility facility) {
         this.idBooking = idBooking;
         this.starTime = starTime;
         this.endTime = endTime;
@@ -20,11 +21,11 @@ public class Booking {
         this.facility = facility;
     }
 
-    public String getIdBooking() {
+    public int getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(String idBooking) {
+    public void setIdBooking(int idBooking) {
         this.idBooking = idBooking;
     }
 

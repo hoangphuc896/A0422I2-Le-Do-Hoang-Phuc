@@ -1,6 +1,8 @@
 package castudymodule2.models;
 
-public class House extends Facility {
+import java.io.Serializable;
+
+public class House extends Facility implements Serializable {
     private String roomStandard;
     private int floors;
 

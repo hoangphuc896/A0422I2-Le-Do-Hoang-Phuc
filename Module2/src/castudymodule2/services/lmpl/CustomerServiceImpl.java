@@ -3,6 +3,7 @@ package castudymodule2.services.lmpl;
 import castudymodule2.models.Customer;
 import castudymodule2.models.Employee;
 import castudymodule2.services.CustomerService;
+import castudymodule2.ultils.ReadAndWrite;
 import castudymodule2.ultils.RegexPerson;
 
 import java.util.Date;
@@ -11,8 +12,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
-    private static final List<Customer> customerList = new LinkedList<>();
-    private static final Scanner scanner = new Scanner(System.in);
+    public static List<Customer> customerList = new LinkedList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
     @Override
     public void addNew() {
@@ -26,6 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
         String adress = RegexPerson.inputAdress();
         Customer customer = new Customer(id, name, birthDay, sex, idCard, email, type, adress);
         customerList.add(customer);
+        ReadAndWrite.write(customerList,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\customer.csv");
     }
 
     @Override
@@ -62,6 +64,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void displayList() {
+        customerList = (List<Customer>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\customer.csv");
         for (Customer customer : customerList) {
             System.out.println(customer.toString());
         }

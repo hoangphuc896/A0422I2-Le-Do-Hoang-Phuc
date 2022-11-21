@@ -1,11 +1,16 @@
 package castudymodule2.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Employee extends Person{
+public class Employee extends Person implements Serializable {
     private String lever;
     private String position;
     private String salary;
+
+    public Employee(){
+
+    }
 
     public Employee(String id, String name, Date birthday, String sex, String idCard, String email, String lever ,String position ,String salary) {
         super(id, name, birthday, sex, idCard, email);

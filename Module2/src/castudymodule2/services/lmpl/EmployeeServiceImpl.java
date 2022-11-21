@@ -3,6 +3,7 @@ package castudymodule2.services.lmpl;
 import castudymodule2.models.Employee;
 import castudymodule2.services.EmployeeService;
 import castudymodule2.ultils.AgeException;
+import castudymodule2.ultils.ReadAndWrite;
 import castudymodule2.ultils.RegexPerson;
 import castudymodule2.validate.Validator;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private static final List<Employee> employeeList = new ArrayList<>();
+    private static List<Employee> employeeList = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -30,6 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         Employee employee = new Employee(id, name, birthDay, sex, idCard, email, lever, position, salary);
         employeeList.add(employee);
+        ReadAndWrite.write(employeeList,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
     }
 
 
@@ -61,6 +63,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void displayList() {
+        employeeList = (List<Employee>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
         for (Employee employee : employeeList) {
             System.out.println(employee.toString());
         }

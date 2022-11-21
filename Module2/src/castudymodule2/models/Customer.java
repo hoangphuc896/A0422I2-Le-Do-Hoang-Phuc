@@ -1,10 +1,15 @@
 package castudymodule2.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Customer extends Person{
+public class Customer extends Person implements Serializable {
     private String customerType;
     private String address ;
+
+    public Customer(){
+
+    }
 
 
     public Customer(String id, String name, Date birthday, String sex, String idCard, String email , String customerType , String address) {

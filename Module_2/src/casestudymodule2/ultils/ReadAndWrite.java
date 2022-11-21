@@ -20,8 +20,6 @@ public class ReadAndWrite {
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream. writeObject(collection);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -38,7 +36,7 @@ public class ReadAndWrite {
         FileInputStream fileInputStream;
         ObjectInputStream objectInputStream;
 
-        Object object = null;
+        Object object;
 
         try {
             fileInputStream = new FileInputStream(diaChi);
