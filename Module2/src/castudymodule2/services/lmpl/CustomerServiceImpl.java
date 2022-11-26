@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
         String adress = RegexPerson.inputAdress();
         Customer customer = new Customer(id, name, birthDay, sex, idCard, email, type, adress);
         customerList.add(customer);
-        ReadAndWrite.write(customerList,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\customer.csv");
+        ReadAndWrite.write(customerList, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\customer.csv");
     }
 
     @Override
@@ -65,8 +65,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void displayList() {
         customerList = (List<Customer>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\customer.csv");
-        for (Customer customer : customerList) {
-            System.out.println(customer.toString());
+        if (customerList != null) {
+            for (Customer customer : customerList) {
+                System.out.println(customer.toString());
+            }
         }
     }
 }

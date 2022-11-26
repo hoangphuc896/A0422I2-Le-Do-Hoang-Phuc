@@ -1,16 +1,21 @@
 package ss12javacollection.product;
 
-public class Product {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Product implements Serializable {
     private int id ;
     private String name;
+    private Date birtDay;
     private double price ;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price) {
+    public Product(int id, String name, Date birtDay, double price) {
         this.id = id;
         this.name = name;
+        this.birtDay = birtDay;
         this.price = price;
     }
 
@@ -30,6 +35,14 @@ public class Product {
         this.name = name;
     }
 
+    public Date getBirtDay() {
+        return birtDay;
+    }
+
+    public void setBirtDay(Date birtDay) {
+        this.birtDay = birtDay;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -43,8 +56,8 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", birtDay=" + birtDay +
                 ", price=" + price +
                 '}';
     }
-
 }

@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         Employee employee = new Employee(id, name, birthDay, sex, idCard, email, lever, position, salary);
         employeeList.add(employee);
-        ReadAndWrite.write(employeeList,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
+        ReadAndWrite.write(employeeList, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
     }
 
 
@@ -64,8 +64,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void displayList() {
         employeeList = (List<Employee>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
-        for (Employee employee : employeeList) {
-            System.out.println(employee.toString());
+        if (employeeList != null) {
+            for (Employee employee : employeeList) {
+                System.out.println(employee.toString());
+            }
         }
     }
 

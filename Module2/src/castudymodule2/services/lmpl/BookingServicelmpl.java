@@ -25,24 +25,26 @@ public class BookingServicelmpl implements BookingService {
         Date bookEndTime = RegexBooking.bookingEndTime();
         Facility facility = RegexBooking.bookFacility();
         Customer customer = RegexBooking.bookCustomer();
-        Booking booking = new Booking(id ,bookStarTime,bookEndTime,customer,facility);
+        Booking booking = new Booking(id, bookStarTime, bookEndTime, customer, facility);
         bookingSet.add(booking);
-        ReadAndWrite.write(bookingSet,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\booking.csv");
-        if (RegexBooking.countBooking(facility.getIdFacility())==5){
+        ReadAndWrite.write(bookingSet, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\booking.csv");
+        if (RegexBooking.countBooking(facility.getIdFacility()) == 5) {
             FacilityServiceImpl.listFacilityMaintain.put(facility, facility.getIdFacility());
-            ReadAndWrite.write((Collection) FacilityServiceImpl.listFacilityMaintain,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitilymaintain.csv");
+            ReadAndWrite.write((Collection) FacilityServiceImpl.listFacilityMaintain, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitilymaintain.csv");
         }
     }
 
     @Override
     public void displayList() {
         bookingSet = (Set<Booking>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\booking.csv");
-        for (Booking booking : bookingSet){
-            System.out.println(booking.toString());
+        if (bookingSet != null) {
+            for (Booking booking : bookingSet) {
+                System.out.println(booking.toString());
+            }
         }
     }
 
-    public Set<Booking> sendBooking(){
+    public Set<Booking> sendBooking() {
         return bookingSet;
     }
 }

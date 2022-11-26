@@ -19,19 +19,23 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void displayMaintenance() {
-        System.out.println("Danh Sach duoc bao tri");
         listFacilityMaintain = (Map<Facility, String>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitilymaintain.csv");
-        for (Map.Entry<Facility, String> entry : listFacilityMaintain.entrySet()) {
-            System.out.println(entry.getKey().toString());
+        if (listFacilityMaintain != null) {
+            System.out.println("Danh Sach duoc bao tri");
+            for (Map.Entry<Facility, String> entry : listFacilityMaintain.entrySet()) {
+                System.out.println(entry.getKey().toString());
+            }
         }
     }
 
     @Override
     public void displayList() {
         facilityIntegerMap = (Map<Facility, Integer>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitily.csv");
-        System.out.println("Danh Sách đã Đặt");
-        for (Map.Entry<Facility, Integer> facility : facilityIntegerMap.entrySet()) {
-            System.out.println("Service" + facility.getKey() + "number of times rented : " + facility.getValue());
+        if (facilityIntegerMap != null) {
+            System.out.println("Danh Sách đã Đặt");
+            for (Map.Entry<Facility, Integer> facility : facilityIntegerMap.entrySet()) {
+                System.out.println("Service" + facility.getKey() + "number of times rented : " + facility.getValue());
+            }
         }
     }
 
@@ -48,7 +52,7 @@ public class FacilityServiceImpl implements FacilityService {
         int floors = RegexFacility.floors();
         Villa villa = new Villa(idVilla, nameVilla, areaUse, rentalPrice, rentalPeopleMax, styleRental, roomStandard, areaPool, floors);
         facilityIntegerMap.put(villa, 0);
-        ReadAndWrite.write((Collection) facilityIntegerMap,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitily.csv");
+        ReadAndWrite.write((Collection) facilityIntegerMap, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitily.csv");
     }
 
     @Override
@@ -77,7 +81,7 @@ public class FacilityServiceImpl implements FacilityService {
         String freeService = RegexFacility.freeService();
         Room room = new Room(idRoom, nameHouse, areaUse, rentalPrice, rentalPeopleMax, styleRental, freeService);
         facilityIntegerMap.put(room, 0);
-        ReadAndWrite.write((Collection) facilityIntegerMap,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitily.csv");
+        ReadAndWrite.write((Collection) facilityIntegerMap, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\facitily.csv");
     }
 
 

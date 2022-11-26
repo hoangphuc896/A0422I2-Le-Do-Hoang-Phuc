@@ -30,39 +30,40 @@ public class RegexFacility {
     }
 
     public static double areaService() {
-        System.out.println("Mời Bạn Nhập Diện tích Diện tích Cần Sử dụng :");
         double area;
         do {
             try {
-                area = Integer.parseInt(scanner.nextLine());
+                System.out.println("Mời Bạn Nhập Diện tích Diện tích Cần Sử dụng :");
+                area = Double.parseDouble(scanner.nextLine());
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
-                area = Integer.parseInt(scanner.nextLine());
+                area = Double.parseDouble(scanner.nextLine());
             }
-        } while (area < 30);
+        } while (area < 30.0);
         return area;
     }
+
     public static double areaPool() {
-        System.out.println("Mời Bạn Nhập Diện tích Diện tích Hồ Bơi Cần Sử dụng :");
         double area;
         do {
             try {
-                area = Integer.parseInt(scanner.nextLine());
+                System.out.println("Mời Bạn Nhập Diện tích Diện tích Hồ Bơi Cần Sử dụng :");
+                area = Double.parseDouble(scanner.nextLine());
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
-                area = Integer.parseInt(scanner.nextLine());
+                area = Double.parseDouble(scanner.nextLine());
             }
-        } while (area < 30);
+        } while (area < 30.0);
         return area;
     }
 
     public static int rentalPrice() {
-        System.out.println("Mời Bạn Nhập Chi Phí phải Trả");
         int rental;
         do {
             try {
+                System.out.println("Mời Bạn Nhập Chi Phí phải Trả");
                 rental = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
@@ -73,10 +74,10 @@ public class RegexFacility {
     }
 
     public static int rentalPeopleMax() {
-        System.out.println("Mời Bạn Nhập Số Người Thuê :");
         int people;
         do {
             try {
+                System.out.println("Mời Bạn Nhập Số Người Thuê :");
                 people = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập lại");
@@ -87,16 +88,16 @@ public class RegexFacility {
     }
 
     public static int floors() {
-        System.out.println("Mời Bạn Nhập số tầng cần thuê :");
         int floor;
         do {
             try {
+                System.out.println("Mời Bạn Nhập số tầng cần thuê :");
                 floor = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
                 floor = Integer.parseInt(scanner.nextLine());
             }
-        } while (floor < 0);
+        } while (floor > 0);
         return floor;
     }
 
@@ -111,8 +112,8 @@ public class RegexFacility {
         return RegexData.regexStr(scanner.nextLine(), FOMAT_REGEXSERVICE, "Bạn Nhập Sai Kiểu Thuê Mời Bạn Nhập Lại :");
     }
 
-    public static String freeService(){
+    public static String freeService() {
         System.out.println("Mời Bạn Nhập Dịch Vụ Khuyến Mãi :");
-        return RegexData.regexStr(scanner.nextLine(),FOMAT_REGEXSERVICE,"Bạn Nhập Sai Dịch Vụ Khuyên mãi Mời Bạn Nhập Lại :");
+        return RegexData.regexStr(scanner.nextLine(), FOMAT_REGEXSERVICE, "Bạn Nhập Sai Dịch Vụ Khuyên mãi Mời Bạn Nhập Lại :");
     }
 }

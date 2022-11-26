@@ -38,7 +38,7 @@ public class RegexPerson {
                     lever = "Sau Đại Học";
                     break;
             }
-        } while (choose < 1 || choose > 4);
+        } while (choose <= 1 || choose >= 4);
         return lever;
     }
 
@@ -48,12 +48,13 @@ public class RegexPerson {
     }
 
     public static String inputSex() {
-        System.out.println("Mời Bạn Chọn Giới tính");
-        System.out.println("1.Nam");
-        System.out.println("1.Nữ");
+
         String sex = null;
         int choose;
         do {
+            System.out.println("Mời Bạn Chọn Giới tính");
+            System.out.println("1.Nam");
+            System.out.println("2.Nữ");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
@@ -63,7 +64,7 @@ public class RegexPerson {
                     sex = "Nữ";
                     break;
             }
-        } while (choose < 1 || choose > 4);
+        } while (choose < 1 || choose > 2);
         return sex;
     }
 
@@ -78,16 +79,16 @@ public class RegexPerson {
     }
 
     public static String inputPosition() {
-        System.out.println("Chức Vụ Bạn Hiện Tại Là Gì");
-        System.out.println("1.Lễ Tân");
-        System.out.println("2.Phục Vụ");
-        System.out.println("3.Chuyên Viên");
-        System.out.println("4.Giám Sát");
-        System.out.println("5.Quản Lý");
-        System.out.println("6.Giám Đốc");
         String position = null;
         int choose;
         do {
+            System.out.println("Chức Vụ Bạn Hiện Tại Là Gì");
+            System.out.println("1.Lễ Tân");
+            System.out.println("2.Phục Vụ");
+            System.out.println("3.Chuyên Viên");
+            System.out.println("4.Giám Sát");
+            System.out.println("5.Quản Lý");
+            System.out.println("6.Giám Đốc");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
@@ -139,15 +140,15 @@ public class RegexPerson {
     }
 
     public static String inputCustomerType(){
-        System.out.println("Mời Bạn Chọn Loại Khách Hàng :");
-        System.out.println("1.Kim Cương");
-        System.out.println("2.Bạch Kim");
-        System.out.println("3.Vàng");
-        System.out.println("4.Bạc");
-        System.out.println("5.Thành Viên");
         String type = null;
         int choose;
         do {
+            System.out.println("Mời Bạn Chọn Loại Khách Hàng :");
+            System.out.println("1.Kim Cương");
+            System.out.println("2.Bạch Kim");
+            System.out.println("3.Vàng");
+            System.out.println("4.Bạc");
+            System.out.println("5.Thành Viên");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:

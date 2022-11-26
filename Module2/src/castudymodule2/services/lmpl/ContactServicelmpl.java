@@ -32,7 +32,7 @@ public class ContactServicelmpl implements ContactService {
             String pay = scanner.nextLine();
             Contract contract = new Contract(id, booking, pre, pay, customer);
             contracts.add(contract);
-            ReadAndWrite.write(contracts,"D:\\Codegym\\Module2\\src\\castudymodule2\\data\\contract.csv");
+            ReadAndWrite.write(contracts, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\contract.csv");
             System.out.println("Đã tạo hợp đồng thành công");
         }
     }
@@ -65,8 +65,10 @@ public class ContactServicelmpl implements ContactService {
     @Override
     public void displayList() {
         contracts = (List<Contract>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\castudymodule2\\data\\contract.csv");
-        for (Contract contract : contracts) {
-            System.out.println(contract.toString());
+        if (contracts != null) {
+            for (Contract contract : contracts) {
+                System.out.println(contract.toString());
+            }
         }
     }
 }
