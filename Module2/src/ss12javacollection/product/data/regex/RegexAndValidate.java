@@ -13,7 +13,7 @@ public class RegexAndValidate {
     public static String regexStr(String temp, String regex, String error) {
         boolean check = true;
         do {
-            if (temp.equals(regex)) {
+            if (temp.matches(regex)) {
                 check = false;
             } else {
                 System.out.println(error);
@@ -22,6 +22,7 @@ public class RegexAndValidate {
         } while (check);
         return temp;
     }
+
 
     public static Date birthDay(String BirthDayStr) throws AgeException {
         // công thức xử lý lỗi định dạng ngày tháng năm sinh cho đúng

@@ -1,13 +1,15 @@
 package ss12javacollection.product;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Product implements Serializable {
-    private int id ;
+public class Product {
+    private int id;
     private String name;
     private Date birtDay;
-    private double price ;
+    private double price;
 
     public Product() {
     }
@@ -51,12 +53,14 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+    private static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", birtDay=" + birtDay +
+                ", birtDay=" + dateFormat.format(birtDay) +
                 ", price=" + price +
                 '}';
     }

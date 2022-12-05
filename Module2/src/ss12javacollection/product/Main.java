@@ -1,10 +1,11 @@
 package ss12javacollection.product;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ProductManager productManager = new ProductManager();
         while (true) {
             System.out.println("1. add new list product");

@@ -30,72 +30,69 @@ public class RegexFacility {
     }
 
     public static double areaService() {
-        double area;
+        double area = 0;
         do {
             try {
                 System.out.println("Mời Bạn Nhập Diện tích Diện tích Cần Sử dụng :");
                 area = Double.parseDouble(scanner.nextLine());
-                break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
-                area = Double.parseDouble(scanner.nextLine());
             }
         } while (area < 30.0);
         return area;
     }
 
     public static double areaPool() {
-        double area;
+        double area = 0;
         do {
             try {
-                System.out.println("Mời Bạn Nhập Diện tích Diện tích Hồ Bơi Cần Sử dụng :");
+                System.out.println("Mời Bạn Nhập Diện tích Hồ Bơi Cần Sử dụng :");
                 area = Double.parseDouble(scanner.nextLine());
-                break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Ko Đúng Mời Bạn Nhập Lại");
-                area = Double.parseDouble(scanner.nextLine());
             }
         } while (area < 30.0);
         return area;
     }
 
+    public static void main(String[] args) {
+        System.out.println(areaPool());
+    }
+
     public static int rentalPrice() {
-        int rental;
+        int rental = 0;
         do {
             try {
                 System.out.println("Mời Bạn Nhập Chi Phí phải Trả");
                 rental = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
-                rental = Integer.parseInt(scanner.nextLine());
             }
         } while (rental < 0);
         return rental;
     }
 
     public static int rentalPeopleMax() {
-        int people;
+        int people = 0;
         do {
             try {
                 System.out.println("Mời Bạn Nhập Số Người Thuê :");
                 people = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập lại");
-                people = Integer.parseInt(scanner.nextLine());
             }
         } while (people < 0 || people > 20);
         return people;
     }
 
     public static int floors() {
-        int floor;
+        int floor = 0;
         do {
             try {
                 System.out.println("Mời Bạn Nhập số tầng cần thuê :");
                 floor = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
-                floor = Integer.parseInt(scanner.nextLine());
             }
         } while (floor > 0);
         return floor;

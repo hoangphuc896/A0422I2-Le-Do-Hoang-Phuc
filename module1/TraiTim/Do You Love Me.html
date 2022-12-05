@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="position: relative;left: 100px;top: 100px">
+<h1 id="loveMy">Do you love me?</h1>
+<button id="yes"  onclick="yes()">yes</button>
+<button id="no" value="not" onmouseover="no()" style="position: relative">no</button>
+</body>
+<script>
+    function yes() {
+       
+    }
+    function no() {
+        let x = Math.floor(Math.random("no") * window.innerWidth);
+        let y = Math.floor(Math.random("no") * window.inputHeight);
+        x = document.getElementById("no").style.left = x + "px";
+        y = document.getElementById("no").style.top =  y + "px";
+    }
+</script>
+</html>

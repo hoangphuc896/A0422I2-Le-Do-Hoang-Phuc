@@ -21,13 +21,12 @@ public class ReadAndWrite {
             objectOutputStream.writeObject(collection);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                fileOutputStream.close();
-                objectOutputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        }
+        try {
+            fileOutputStream.close();
+            objectOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

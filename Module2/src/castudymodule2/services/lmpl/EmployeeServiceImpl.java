@@ -59,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         } else {
             System.out.println(employeeList);
         }
+        ReadAndWrite.write(employeeList, "D:\\Codegym\\Module2\\src\\castudymodule2\\data\\employee.csv");
     }
 
     @Override
