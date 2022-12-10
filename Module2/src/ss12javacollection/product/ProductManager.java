@@ -16,13 +16,15 @@ public class ProductManager {
         products = ReadAndWrite.read("D:\\Codegym\\Module2\\src\\ss12javacollection\\product\\data\\product.csv");
         // Thêm thông tin
         int id;
-        try {
-            System.out.println("Enter id :");
-            id = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
-            id = Integer.parseInt(scanner.nextLine());
-        }
+        do {
+            try {
+                System.out.println("Enter id :");
+                id = Integer.parseInt(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn Nhập Sai Mời Bạn Nhập Lại");
+            }
+        }while (true);
         System.out.println("Enter Name : ");
         String name = RegexAndValidate.regexStr(scanner.nextLine(), FOMAT_NAME, "Bạn Nhập sai định dạnh mời bạn nhập lại");// công thức định dạnh tên cho đối tượng
         Date birthDay;
@@ -36,7 +38,7 @@ public class ProductManager {
                 System.out.println("Bạn Nhập Sai Ngày sinh Mời Bạn Nhập Lại");
             }
         } while (true);
-        double price;
+        double price = 0;
         do {
             try {
                 System.out.println("Enter price : ");
@@ -44,7 +46,6 @@ public class ProductManager {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Bạn Nhập sai mời bạn nhập lại ");
-                price = Double.parseDouble(scanner.nextLine());
             }
         }while (price>0);
 
@@ -86,7 +87,7 @@ public class ProductManager {
     }
 
     public void delete() throws IOException {
-        products = (ArrayList<Product>) ReadAndWrite.read("D:\\Codegym\\Module2\\src\\ss12javacollection\\product\\data\\product.csv");
+        products = ReadAndWrite.read("D:\\Codegym\\Module2\\src\\ss12javacollection\\product\\data\\product.csv");
         // xóa thông tin dựa theo ID
         System.out.println("Enter id :");
         int id = Integer.parseInt(scanner.nextLine());

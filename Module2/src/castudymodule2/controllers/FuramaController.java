@@ -19,8 +19,7 @@ public class FuramaController implements Serializable {
             System.out.println("Choose from 1-6");
             Scanner scanner = new Scanner(System.in);
 
-
-            switch (scanner.nextInt()) {
+            switch (Integer.parseInt(scanner.nextLine())) {
                 case 1:
                     displayEmployeeMenu();
                     break;

@@ -11,6 +11,11 @@ public class Customer extends Person implements Serializable {
 
     }
 
+    @Override
+    public String getInfo() {
+        return null;
+    }
+
 
     public Customer(String id, String name, Date birthday, String sex, String idCard, String email , String customerType , String address) {
         super(id, name, birthday, sex, idCard, email);

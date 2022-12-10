@@ -79,6 +79,7 @@ public abstract class Person implements Serializable {
 
     private static DateFormat dateFormat;
 
+    public abstract String getInfo();
 
     @Override
     public String toString() {

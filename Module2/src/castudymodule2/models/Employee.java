@@ -12,6 +12,11 @@ public class Employee extends Person implements Serializable {
 
     }
 
+    @Override
+    public String getInfo() {
+        return null;
+    }
+
     public Employee(String id, String name, Date birthday, String sex, String idCard, String email, String lever ,String position ,String salary) {
         super(id, name, birthday, sex, idCard, email);
         this.lever = lever ;

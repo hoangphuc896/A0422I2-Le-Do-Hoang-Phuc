@@ -48,7 +48,6 @@ public class RegexPerson {
     }
 
     public static String inputSex() {
-
         String sex = null;
         int choose;
         do {
