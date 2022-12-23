@@ -1,9 +1,9 @@
 package module2.ultils;
 
-import module2.model.Account;
-import module2.model.PayAccount;
-import ss19stringandregex.schoolclass.model.Student;
-import ss19stringandregex.schoolclass.model.Teacher;
+
+import module2.model.DanhSachBenhNhan;
+import module2.model.DanhSachBenhNhanVip;
+
 
 import java.io.*;
 import java.text.DateFormat;
@@ -16,13 +16,13 @@ import java.util.List;
 public class ReadAndWrite {
     private static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    public static void writeAccount(List<Account> accountList, String filer) {
+    public static void writeAccount(List<DanhSachBenhNhan> accountList, String filer) {
         FileWriter fileWriter;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(filer, false);
             bufferedWriter = new BufferedWriter(fileWriter);
-            for (Account account : accountList) {
+            for (DanhSachBenhNhan account : accountList) {
                 bufferedWriter.write(account.getInfo() + "\n");
             }
         } catch (IOException e) {
@@ -37,8 +37,8 @@ public class ReadAndWrite {
 
     }
 
-    public static List<Account> readAccount(String filer) {
-        List<Account> arrayList = new ArrayList<>();
+    public static List<DanhSachBenhNhan> readAccount(String filer) {
+        List<DanhSachBenhNhan> arrayList = new ArrayList<>();
         BufferedReader bufferedReader = null;
         try {
             FileReader fileReader = new FileReader(filer);
@@ -47,15 +47,14 @@ public class ReadAndWrite {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 temp = line.split(",");
-                int id= Integer.parseInt(temp[0]);
-                String coding =temp[1];
-                String name =temp[2];
-                Date createdate=dateFormat.parse(temp[3]);
-                String moneySave =temp[4];
-                Date dateSave = dateFormat.parse(temp[5]);
-                int interestRate= Integer.parseInt(temp[6]);
-                int term= Integer.parseInt(temp[7]);
-                Account account= new Account(id, coding, name, createdate,moneySave,dateSave,interestRate,term);
+                int id = Integer.parseInt(temp[0]);
+                String maBenhNhan= temp[1];
+                String ten = temp[2];
+                Date ngayNhapVien= dateFormat.parse(temp[3]);
+                Date ngayRaVien= dateFormat.parse(temp[4]);
+                String lyDo= temp[5];
+                int phiNamVien= Integer.parseInt(temp[6]);
+                DanhSachBenhNhan account= new DanhSachBenhNhan(id, maBenhNhan, ten, ngayNhapVien,ngayRaVien,lyDo,phiNamVien);
                 arrayList.add(account);
 
             }
@@ -71,8 +70,8 @@ public class ReadAndWrite {
         return arrayList;
     }
 
-    public static List<PayAccount> readPayAccount(String filer) {
-        List<PayAccount> arrayList = new ArrayList<>();
+    public static List<DanhSachBenhNhanVip> readPayAccount(String filer) {
+        List<DanhSachBenhNhanVip> arrayList = new ArrayList<>();
         BufferedReader bufferedReader = null;
         try {
             FileReader fileReader = new FileReader(filer);
@@ -81,13 +80,15 @@ public class ReadAndWrite {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 temp = line.split(",");
-                int id= Integer.parseInt(temp[0]);
-                String coding =temp[1];
-                String name =temp[2];
-                Date createdate=dateFormat.parse(temp[3]);
-                String idCard= temp[4];
-                String moneyBank=temp[5];
-                PayAccount payAccount = new PayAccount(id, coding, name, createdate,idCard,moneyBank);
+                int id = Integer.parseInt(temp[0]);
+                String maBenhNhan = temp[1];
+                String ten =  temp[2];
+                Date ngayNhapVien= dateFormat.parse( temp[3]);
+                Date ngayRaVien= dateFormat.parse( temp[4]);
+                String lyDo= temp[5];
+                String loaiVip=temp[6];
+                String thoiHan=temp[7];
+                DanhSachBenhNhanVip payAccount = new DanhSachBenhNhanVip(id, maBenhNhan, ten, ngayNhapVien,ngayRaVien,lyDo,loaiVip,thoiHan);
                 arrayList.add(payAccount);
 
             }
@@ -102,13 +103,13 @@ public class ReadAndWrite {
         }
         return arrayList;
     }
-    public static void writePayAccount(List<PayAccount> payAccountList, String filer) {
+    public static void writePayAccount(List<DanhSachBenhNhanVip> payAccountList, String filer) {
         FileWriter fileWriter ;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(filer, false);
             bufferedWriter = new BufferedWriter(fileWriter);
-            for (PayAccount payAccount : payAccountList) {
+            for (DanhSachBenhNhanVip payAccount : payAccountList) {
                 bufferedWriter.write(payAccount.getInfo() + "\n");
             }
         } catch (IOException e) {

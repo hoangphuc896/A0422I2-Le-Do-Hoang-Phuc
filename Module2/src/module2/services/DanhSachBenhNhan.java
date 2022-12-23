@@ -1,6 +1,6 @@
 package module2.services;
 
-public interface ManageBankServices {
+public interface DanhSachBenhNhan {
     void addNew();
     void delete();
     void display();
