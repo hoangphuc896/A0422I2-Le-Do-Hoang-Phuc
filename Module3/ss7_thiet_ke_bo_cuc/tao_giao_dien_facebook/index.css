@@ -1,0 +1,22 @@
+header{
+    background-color: dodgerblue;
+    font-family: Arial;
+    margin: 25px;
+    padding: 10px;
+}
+h1{
+    display: inline;
+    margin-left: 50px;
+    color: white;
+}
+h5{
+    display: inline;
+    padding: 0px;
+}
+.student{
+    margin-left: 800px;
+}
+
+button{
+    margin-left: 10px;
+}
