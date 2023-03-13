@@ -2,7 +2,6 @@ package com.example.ss12jdbc.repository;
 
 import com.example.ss12jdbc.model.Users;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,14 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UseRepositoryImpl implements IUseRepository {
-    private Connection connection = DBConnection.getConnection();
     private static final String ALL_USERS = "SELECT * FROM users";
     private static final String ADD_NEW_USER = "INSERT INTO users" + "(name,email,country) VALUES" + "(?,?,?)";
     private static final String FIND_BY_ID = "SELECT id ,name , email, country FROM users WHERE id = ?";
     private static final String UPDATE_USER = "UPDATE users SET name = ?,email= ?, country =? where id = ?";
     private static final String DELETE_USER = "DELETE from users WHERE id = ? ";
     private static final String SEARCH_USER = "SELECT*FROM users WHERE country LIKE ?";
-    private static final String SORT_USER_OR_BY_NAME = "SELECT*FROM users ORDER BY name";
+    private static final String SORT_USER_OR_BY_NAME = "SELECT*FROM users ORDER BY name = ?";
 
     @Override
     public List<Users> findAll() {

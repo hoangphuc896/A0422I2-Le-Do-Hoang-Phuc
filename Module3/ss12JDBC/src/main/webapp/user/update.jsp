@@ -28,7 +28,7 @@
                 <th>User Name:</th>
                 <td>
                     <input id="username" type="text" name="name" size="45"
-                           value="<c:out value='${users.name}' />"
+                           value="<c:out value='${user.name}' />"
                     />
                 </td>
             </tr>
@@ -36,7 +36,7 @@
                 <th>User Email:</th>
                 <td>
                     <input type="text" name="email" size="45"
-                           value="<c:out value='${users.email}' />"
+                           value="<c:out value='${user.email}' />"
                     />
                 </td>
             </tr>
@@ -44,7 +44,7 @@
                 <th>Country:</th>
                 <td>
                     <input type="text" name="country" size="15"
-                           value="<c:out value='${users.country}' />"
+                           value="<c:out value='${user.country}' />"
                     />
                 </td>
             </tr>
