@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:fragment="headed">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="/blog">
+        <img src="https://dogohaiminh.vn/static/uploads/chu-phuc-trong-tieng-Han.jpg" width="30" height="30" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/create">Tạo Mới bài Viết</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/category">Quản Lý Danh Mục</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Xem Danh chi tiết
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a th:each="category : ${categorises}" class="dropdown-item"
+                       th:href="@{/blog/{id}/view(id=${category.getCategoryId()})}"
+                       th:text="${category.categoryName}"></a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="/blog/search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+</header>
+<div th:if="${msg}">
+    <div>
+        <span th:text="${msg}"></span>
+    </div>
+</div>
+<table class="table" th:action="@{/blog/list}">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">title</th>
+        <th scope="col">date</th>
+        <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,list :${blogs}" th:object="${blogs}">
+        <td th:text="${row.id}"></td>
+        <td th:text="${row.title}"></td>
+        <td th:text="${row.date}"></td>
+        <td th:text="${row.category.categoryName}"></td>
+        <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">Update</a></td>
+        <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<div style="text-align: center">
+    <div style=" display: inline-block" th:if="${blogs.totalPages > 0}"
+         th:each="pageNumber : ${pageNumber}">
+        <a style="font-size: 30px; border: 1px solid blue" th:href="@{/blog(size=${blogs.size}, page=${pageNumber})}"
+           th:text="${pageNumber}"
+           th:class="${pageNumber==blogs.number + 1} ? active"></a>
+    </div>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

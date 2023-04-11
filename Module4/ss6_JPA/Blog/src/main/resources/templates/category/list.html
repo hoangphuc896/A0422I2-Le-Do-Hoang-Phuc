@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="~{blog/list::headed}"></div>
+<p><a th:href="@{category/create}">Create Catagory</a></p>
+<div th:if="${msg}">
+    <div>
+        <span th:text="${msg}"></span>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row:${categorises}" th:object="${categorises}">
+        <th th:text="${row.categoryId}"></th>
+        <td th:text="${row.categoryName}"></td>
+        <td><a th:href="@{category/{id}/edit(id=${row.getCategoryId()})}">Update</a></td>
+        <td><a th:href="@{category/{id}/delete(id=${row.getCategoryId()})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>
