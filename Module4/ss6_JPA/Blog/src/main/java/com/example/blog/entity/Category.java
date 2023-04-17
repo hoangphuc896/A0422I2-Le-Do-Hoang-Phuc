@@ -1,5 +1,7 @@
 package com.example.blog.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int categoryId;
     private String categoryName;
+    @JsonBackReference
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
     private List<Blog> blogs;
 

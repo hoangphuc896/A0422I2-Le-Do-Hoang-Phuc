@@ -1,7 +1,7 @@
-package com.example.photo_of_the_day.controler;
+package com.example.photo_of_day.controler;
 
-import com.example.photo_of_the_day.entity.Evaluate;
-import com.example.photo_of_the_day.service.PhotoDayServiceImpl;
+import com.example.photo_of_day.entity.Evaluate;
+import com.example.photo_of_day.service.PhotoDayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,7 +16,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-public class PhotoDayController{
+@RequestMapping("/photo")
+public class PhotoDayController {
 
     @Autowired
     PhotoDayServiceImpl photoDayService;
@@ -39,17 +40,20 @@ public class PhotoDayController{
                     .collect(Collectors.toList());
             model.addAttribute("pageNumbers", pageNumbers);
         }
-        return "home";
+        return "photo/home";
     }
+
     @PostMapping("/evaluate")
-    public String submitForm(@ModelAttribute("evaluate") Evaluate evaluate){
-        photoDayService.addEvaluate(evaluate);
-        return "redirect:/";
+    public String submitForm(@ModelAttribute("evaluate") Evaluate evaluate) {
+        photoDayService.save(evaluate);
+        return "redirect:/photo";
     }
+
     @GetMapping("/like/{id}")
-    public String like(@PathVariable("id") int id){
-        Evaluate evaluate =photoDayService.findById(id);
+    public String like(@PathVariable("id") int id) {
+        Evaluate evaluate = photoDayService.findById(id);
         evaluate.setNumberOfLikes(evaluate.getNumberOfLikes()+1);
-        return "redirect:/";
+        photoDayService.update(evaluate);
+        return "redirect:/photo";
     }
 }

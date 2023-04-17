@@ -37,9 +37,9 @@ public class CategoryController {
         model.addAttribute("category",category);
         return "category/edit";
     }
-    @GetMapping("/{id}/delete")
-    public String delete(@PathVariable int id, RedirectAttributes attributes){
-        categoryService.delete(id);
+    @GetMapping("/{categoryId}/delete")
+    public String delete(Category category, RedirectAttributes attributes){
+        categoryService.delete(category.getCategoryId());
         attributes.addFlashAttribute("msg","bạn Xóa Danh Mục Thành công");
         return "redirect:/category";
     }

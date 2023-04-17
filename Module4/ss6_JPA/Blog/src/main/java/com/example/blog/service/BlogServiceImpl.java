@@ -51,6 +51,10 @@ public class BlogServiceImpl implements IBlogService {
         return blogRepository.findBlogByTitleContaining(title);
     }
 
+    public List<Blog> findAll(){
+        return blogRepository.findAll();
+    }
+
     @Override
     public List<Blog> findByCategoryId(int id) {
         return blogRepository.findBlogByCategory_CategoryId(id);
