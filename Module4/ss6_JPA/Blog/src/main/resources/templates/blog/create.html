@@ -4,33 +4,34 @@
     <title>Title</title>
 </head>
 <style>
-    body{
+    body {
         text-align: center;
     }
 </style>
 <body>
-    <h1>Create Blog</h1>
-    <p><a th:href="@{/blog}">Back To List Blog</a></p>
-    <div style="border: 1px solid ; width: 50% ; margin: 0 auto">
-        <form th:action="@{/blog/create}" method="post" th:object="${blog}">
-            <input type="hidden" th:field="*{id}">
-            <div>
-                <label>Name:</label>
-                <input type="text" th:field="*{title}">
-            </div>
-            <div>
-                <label>Price:</label>
-                <input type="date" th:field="*{date}">
-            </div>
-            <div>
-                <select th:field="*{category}">
-                    <option th:each="c: ${categorises}" th:text="${c.categoryName}" th:value="${c.categoryId}"></option>
-                </select>
-            </div>
+<h1>Create Blog</h1>
+<p><a th:href="@{/blog}">Back To List Blog</a></p>
+<div style="border: 1px solid ; width: 50% ; margin: 0 auto">
+    <form th:action="@{/blog/create}" method="post" th:object="${blog}">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{title}">
 
-            <input type="submit" value="Create">
-        </form>
-    </div>
+        </div>
+        <div>
+            <label>Price:</label>
+            <input type="date" th:field="*{date}">
+        </div>
+        <div>
+            <select th:field="*{category}">
+                <option th:each="c: ${categorises}" th:text="${c.categoryName}" th:value="${c.categoryId}"></option>
+            </select>
+        </div>
+
+        <input type="submit" value="Create">
+    </form>
+</div>
 </body>
-<
+<div th:replace="~{layout::script}"></div>
 </html>

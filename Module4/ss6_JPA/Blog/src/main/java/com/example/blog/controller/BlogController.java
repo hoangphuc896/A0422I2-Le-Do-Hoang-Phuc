@@ -31,7 +31,7 @@ public class BlogController {
     public Iterable<Category> categories() {
         return categoryService.findAll();
     }
-    
+
     @GetMapping("")
     public String findAll(Model model,
                           @RequestParam("page") Optional<Integer> page,
@@ -70,6 +70,7 @@ public class BlogController {
         attributes.addFlashAttribute("msg","Bạn thành công xóa");
         return "redirect:/blog";
     }
+
     @GetMapping("/search")
     public String searchByTitle(Model model,@RequestParam("title") String title){
         List<Blog> blogs = blogService.findByTitle(title);
@@ -93,5 +94,4 @@ public class BlogController {
         model.addAttribute("blogs",blogService.findByCategoryId(id));
         return "blog/list";
     }
-
 }

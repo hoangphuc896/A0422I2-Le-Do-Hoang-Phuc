@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create User</h1>
+<div style="border: 1px solid ; width: 50% ; margin: 0 auto">
+    <form th:action="@{/addRole}" method="post" th:object="${userRole}">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    User
+                </td>
+                <td>
+                    <select th:field="*{users}">
+                        <option th:each="u:${users}" th:value="${u.userID}" th:text="${u.userName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    role
+                </td>
+                <td>
+                    <select th:field="*{role}">
+                        <option th:each="r:${roles}" th:value="${r.roleId}" th:text="${r.roleName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Regiser">
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

@@ -39,6 +39,9 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <form action="/blog/logout">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Đăng Xuất</button>
+        </form>
     </div>
 </nav>
 </header>
@@ -47,6 +50,7 @@
         <span th:text="${msg}"></span>
     </div>
 </div>
+
 <table class="table" th:action="@{/blog/list}">
     <thead>
     <tr>
@@ -63,7 +67,29 @@
         <td th:text="${row.date}"></td>
         <td th:text="${row.category.categoryName}"></td>
         <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">Update</a></td>
-        <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">Delete</a></td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+            Delete
+        </button></td>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete To Blog</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn Có Muốn Xóa Không
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a th:href="@{/blog/{id}/delete(id=${row.getId()})}"
+                    ><button type="button" class="btn btn-primary">Delete</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
     </tr>
     </tbody>
 </table>
@@ -75,6 +101,7 @@
            th:class="${pageNumber==blogs.number + 1} ? active"></a>
     </div>
 </div>
+
 </body>
 <div th:replace="~{layout::script}"></div>
 </html>

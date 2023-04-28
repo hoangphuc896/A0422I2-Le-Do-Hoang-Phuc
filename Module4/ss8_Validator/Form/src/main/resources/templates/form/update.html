@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update Form</h1>
+<p><a th:href="@{/form}">Back To List Blog</a></p>
+<div>
+    <form th:action="@{/form/update}" method="post" th:object="${form}" novalidate="novalidate">
+        <div>
+            <label>ID:</label>
+            <span th:text="*{id}"></span>
+            <input type="hidden" th:field="*{id}">
+
+        </div>
+        <div>
+            <label>firstName:</label>
+            <input type="text" th:field="*{firstName}">
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+        </div>
+        <div>
+            <label>phones :</label>
+            <input type="text" th:field="*{phones}">
+            <span th:if="${#fields.hasErrors('phones')}" th:errors="*{phones}"></span>
+        </div>
+        <div>
+            <label>age :</label>
+            <input type="text" th:field="*{age}">
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+        </div>
+        <div>
+            <label>email :</label>
+            <input type="email" th:field="*{email}">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+        <input type="submit" value="Thêm Mới">
+    </form>
+</div>
+</body>
+</html>
