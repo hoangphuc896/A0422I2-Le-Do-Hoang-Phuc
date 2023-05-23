@@ -42,8 +42,8 @@ public class BlogController {
         String sortField = sort.orElse("date");
 //        Sort sortBy = Sort.by("email").descending().and(Sort.by("phoneNumber").ascending());
         Page<Blog> blogs = blogService.findAll(PageRequest.of(currentPage -1, pageSize, Sort.by(sortField).descending()));
-        model.addAttribute("blogs",blogs);
         int totalPages = blogs.getTotalPages();
+        model.addAttribute("blogs",blogs);
         if (totalPages > 1) {
             List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());
             model.addAttribute("pageNumber", pageNumbers);

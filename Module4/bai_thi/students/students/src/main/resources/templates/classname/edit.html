@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div th:replace="~{student/list::headed}"></div>
+<h1>Update Category</h1>
+<div>
+    <form th:action="@{/classname/update}" method="post" th:object="${classname}" novalidate="novalidate">
+        <div>
+            <label>ID:</label>
+            <span th:text="*{idClass}"></span>
+            <input type="hidden" th:field="*{idClass}">
+        </div>
+        <div>
+            <label>Name :</label>
+            <input type="text" th:field="*{className}">
+        </div>
+
+        <input type="submit" value="Thêm Mới">
+    </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

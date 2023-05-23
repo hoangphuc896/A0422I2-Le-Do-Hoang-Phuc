@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+  <title>Title</title>
+</head>
+<style>
+  body {
+    text-align: center;
+  }
+</style>
+<body>
+<h1>Create Student</h1>
+<p><a th:href="@{/student}">Back To List Student</a></p>
+<div style="border: 1px solid ; width: 50% ; margin: 0 auto">
+  <form th:action="@{/student/create}" method="post" th:object="${student}">
+    <div>
+      <label>Id:</label>
+      <input type="text" th:field="*{id}">
+      <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+    </div>
+    <div>
+      <label>Name:</label>
+      <input type="text" th:field="*{studentName}">
+      <span th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}"></span>
+    </div>
+    <div>
+      <label>birthDay:</label>
+      <input type="date" th:field="*{birthDay}">
+      <span th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"></span>
+    </div>
+    <div>
+      <label>Age:</label>
+      <input type="text" th:field="*{age}">
+      <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    </div>
+    <div>
+      <label>Sex:</label>
+      <select th:field="*{sex}">
+        <option value="nam">Nam</option>
+        <option value="nu">Nu</option>
+      </select>
+    </div>
+    <div>
+      <select th:field="*{classname}">
+        <option th:each="c: ${classnames}" th:text="${c.className}" th:value="${c.idClass}"></option>
+      </select>
+    </div>
+    <input type="submit" value="Create">
+  </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

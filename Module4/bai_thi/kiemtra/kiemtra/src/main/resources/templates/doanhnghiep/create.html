@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:replace="~{duan/list::headed}"></div>
+<h1> Create ClassName</h1>
+
+<div style="border: 1px solid ; width: 50% ; margin: 0 auto">
+  <form th:action="@{/doanhnghiep/create}" method="post" th:object="${DoanhNghiep}">
+    <div>
+      <label>MaDoanhNghiep:</label>
+      <input type="text" th:field="*{maDoanhNghiep}">
+      <span th:if="${#fields.hasErrors('maDoanhNghiep')}" th:errors="*{maDoanhNghiep}"></span>
+    </div>
+    <div>
+      <label>tendoanhnghiep:</label>
+      <input type="text" th:field="*{tenDoanhNghiep}">
+    </div>
+      <div>
+          <label>LinhVuc:</label>
+          <input type="text" th:field="*{linhVuc}">
+      </div>
+      <div>
+          <label>SDT:</label>
+          <input type="text" th:field="*{sDT}">
+      </div>
+      <div>
+          <label>email:</label>
+          <input type="email" th:field="*{email}">
+      </div>
+      <div>
+          <label>diachi:</label>
+          <input type="text" th:field="*{diaChi}">
+      </div>
+    <input type="submit" value="Create">
+  </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

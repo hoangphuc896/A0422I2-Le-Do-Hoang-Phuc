@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+</head>
+<body>
+<h1>Update blog</h1>
+<p><a th:href="@{/blog}">Back To List Blog</a></p>
+<div>
+  <form th:action="@{/student/update}" method="post" th:object="${student}">
+    <div>
+      <label>ID:</label>
+      <span th:text="*{id}"></span>
+      <input type="hidden" th:field="*{id}">
+    </div>
+    <div>
+      <label>Name:</label>
+      <input type="text" th:field="*{studentName}">
+      <span th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}"></span>
+    </div>
+    <div>
+      <label>birthDay:</label>
+      <input type="date" th:field="*{birthDay}">
+      <span th:if="${#fields.hasErrors('birthDay')}" th:errors="*{birthDay}"></span>
+    </div>
+    <div>
+      <label>Age:</label>
+      <input type="date" th:field="*{age}">
+      <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    </div>
+    <div>
+      <label>Sex:</label>
+      <input type="date" th:field="*{sex}">
+    </div>
+    <div>
+      <select th:field="*{classname}">
+        <option th:each="c: ${classnames}" th:text="${c.className}" th:value="${c.idClass}"></option>
+      </select>
+    </div>
+    <input type="submit" value="Update">
+  </form>
+
+</div>
+</body>
+</html>

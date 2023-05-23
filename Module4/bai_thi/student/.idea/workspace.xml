@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a84c0ed-3d82-4828-8393-6607717b3505" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/student.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/StudentApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/ClassNameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/entity/ClassName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/repository/ClassNameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/repository/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/service/ClassnameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/service/ClassnameServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/java/com/example/student/service/StudentServiceIpml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/classname/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/classname/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/classname/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/student/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/student/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/main/resources/templates/student/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student/src/test/java/com/example/student/StudentApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/students.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/controller/ClassNameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/entity/ClassName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/repository/ClassNameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/repository/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/service/ClassnameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/service/ClassnameServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/java/com/example/students/service/StudentServiceIpml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/classname/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/classname/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/classname/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/student/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/student/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../students/students/src/main/resources/templates/student/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/java/com/example/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/java/com/example/blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/java/com/example/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/java/com/example/blog/service/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss6_JPA/Blog/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/controller/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/controller/FormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/repository/FormRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/repository/FormRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/service/FormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/java/com/example/form/service/FormServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/resources/templates/form/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Validator/Form/src/main/resources/templates/form/list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2PHpahUjloaVxMJQQYAXLd6WUCY" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Codegym/Module4/ss8_Validator/Form",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a84c0ed-3d82-4828-8393-6607717b3505" name="Changes" comment="" />
+      <created>1683123927038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683123927038</updated>
+      <workItem from="1683123928071" duration="29000" />
+      <workItem from="1683165755538" duration="245000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

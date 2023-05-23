@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <title>Title</title>
+</head>
+<body>
+<header th:fragment="headed">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/student">
+            <img src="https://dogohaiminh.vn/static/uploads/chu-phuc-trong-tieng-Han.jpg" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/create">Tạo Mới bài Viết</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/classname">Danh Sách Lớp</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Xem Danh Sách Lớp
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a th:each="classname : ${classnames}" class="dropdown-item"
+                           th:href="@{/student/{id}/view(id=${classname.getIdClass()})}"
+                           th:text="${classname.className}"></a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/student/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search All" aria-label="Search"
+                       name="searchAll">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+<div th:if="${msg}">
+    <div>
+        <span th:text="${msg}"></span>
+    </div>
+</div>
+<form th:action="@{/student/deleteAll}">
+    <div>
+        <table class="table" th:action="@{/student/list}">
+            <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">BirthDay</th>
+                <th scope="col">Age</th>
+                <th scope="col">Sex</th>
+                <th scope="col">ClassName</th>
+            </tr>
+            </thead>
+            <tbody id="result">
+            <tr th:each="row,list :${students}" th:object="${row}">
+                <td><input type="checkbox" th:value="*{id}" name="ids"></td>
+                <td th:text="${row.id}"></td>
+                <td th:text="${row.studentName}"></td>
+                <td th:text="${row.birthDay}"></td>
+                <td th:text="${row.age}"></td>
+                <td th:text="${row.sex}"></td>
+                <td th:text="${row.classname.className}"></td>
+                <td><a th:href="@{/student/{id}/edit(id=${row.getId()})}">Update</a></td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"
+                            th:attr="data-id=*{id}">
+                        Delete
+                    </button>
+                </td>
+
+            </tr>
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Delete</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            bạn có muốn xóa không ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a id="deleteLink">
+                                <button type="button">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </tbody>
+        </table>
+    </div>
+    <a type="button"  data-toggle="modal" data-target="#modelId">
+        Delete All
+    </a>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn Có Muốn Xóa Không ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div style="text-align: center">
+    <div style=" display: inline-block" th:if="${students.totalPages > 0}"
+         th:each="pageNumber : ${pageNumber}">
+        <a style="font-size: 30px; border: 1px solid blue"
+           th:href="@{/student(size=${students.size}, page=${pageNumber})}"
+           th:text="${pageNumber}"
+           th:class="${pageNumber==students.number + 1} ? active"></a>
+    </div>
+</div>
+
+</body>
+<div th:replace="~{layout::script}"></div>
+
+<script>
+    $('#staticBackdrop').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var id = button.data('id')
+        $('#deleteLink').attr("href", "/student/" + id + "/delete")
+    })
+</script>
+</html>

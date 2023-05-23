@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <title>Title</title>
+</head>
+<body>
+<header th:fragment="headed">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/duan">
+            <img src="https://dogohaiminh.vn/static/uploads/chu-phuc-trong-tieng-Han.jpg" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/duan/create">Tạo Mới bài Viết</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/doanhnghiep">Danh Sach Doanh Nghiep</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Xem Danh Sách Lớp
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a th:each="doanhnghiep : ${doanhnghieps}" class="dropdown-item"
+                           th:href="@{/duan/{id}/view(id=${doanhnghiep.getMaDoanhNghiep()})}"
+                           th:text="${doanhnghiep.tenDoanhNghiep}"></a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/duan/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search All" aria-label="Search"
+                       name="searchAll">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+<div th:if="${msg}">
+    <div>
+        <span th:text="${msg}"></span>
+    </div>
+</div>
+<form>
+    <div>
+        <table class="table" th:action="@{/duan/list}">
+            <thead>
+            <tr>
+                <th scope="col">maduan</th>
+                <th scope="col">tenduan</th>
+                <th scope="col">kinhphi</th>
+                <th scope="col">mota</th>
+                <th scope="col">thoigian</th>
+                <th scope="col">ngaydangky</th>
+                <th scope="col">doanhnghiep</th>
+            </tr>
+            </thead>
+            <tbody id="result">
+            <tr th:each="row,list :${duan}" th:object="${row}">
+                <td th:text="${row.maDuAn}"></td>
+                <td th:text="${row.tenDuAn}"></td>
+                <td th:text="${row.kinhPhi}"></td>
+                <td th:text="${row.moTa}"></td>
+                <td th:text="${row.thoiGian}"></td>
+                <td th:text="${row.ngayDangKy}"></td>
+                <td th:text="${row.doanhnghiep.tenDoanhNghiep}"></td>
+                <td><a th:href="@{/duan/{id}/edit(id=${row.getMaDuAn()})}">Update</a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</form>
+<div style="text-align: center">
+    <div style=" display: inline-block" th:if="${duan.totalPages > 0}"
+         th:each="pageNumber : ${pageNumber}">
+        <a style="font-size: 30px; border: 1px solid blue"
+           th:href="@{/duan(size=${duan.size}, page=${pageNumber})}"
+           th:text="${pageNumber}"
+           th:class="${pageNumber==duan.number + 1} ? active"></a>
+    </div>
+</div>
+
+</body>
+<div th:replace="~{layout::script}"></div>
+
+</html>

@@ -48,7 +48,7 @@ public class FormController {
     }
 
     @PostMapping("/update")
-    public String update(@Valid Form form, BindingResult bindingResult, RedirectAttributes attributes) {
+    public String update(@Valid @ModelAttribute("form") Form form, BindingResult bindingResult, RedirectAttributes attributes) {
         if (bindingResult.hasErrors()) {
             return "/form/update";
         }
@@ -71,7 +71,7 @@ public class FormController {
 //        return new ResponseEntity<>(null, HttpStatus.OK);
 //    }
 
-    @PostMapping("/deleteAll")
+    @GetMapping(value = "/deleteAll")
     public String delete(@RequestParam("ids") String[] ids){
         formService.deleteAll(ids);
         return "redirect:/form";

@@ -44,7 +44,7 @@
 <p>
     <a th:href="@{/form/create}">Create To Form</a>
 </p>
-<form th:action="@{/form/deleleAll}">
+<form th:action="@{/form/deleteAll}">
     <div>
         <table class="table">
             <thead>
@@ -57,7 +57,7 @@
                 <th scope="col">Email</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="result">
             <tr th:each="row,list :${forms}" th:object="${row}">
                 <td><input type="checkbox" th:value="*{id}" name="ids"></td>
                 <td th:text="${row.id}"></td>
@@ -67,39 +67,86 @@
                 <td th:text="${row.email}"></td>
                 <td><a th:href="@{/form/{id}/edit(id=${row.getId()})}">Update</a></td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<!--                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+<!--                        Delete-->
+<!--                    </button>-->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" th:attr="data-id=*{id}">
                         Delete
                     </button>
                 </td>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete To Form</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Bạn Có Muốn Xóa Không
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a th:href="@{/form/{id}/delete(id=${row.getId()})}">
-                                    <!--                        <a  th:data-parameter1="${row.getId()}" th:onclick="deleteItem(this.getAttribute('data-parameter1'))">-->
-                                    <button type="button" class="btn btn-primary">Delete</button>
-                                </a>
-                            </div>
+<!--                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"-->
+<!--                     aria-labelledby="exampleModalLabel"-->
+<!--                     aria-hidden="true">-->
+<!--                    <div class="modal-dialog" role="document">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-header">-->
+<!--                                <h5 class="modal-title" id="exampleModalLabel">Delete To Form</h5>-->
+<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                    <span aria-hidden="true">&times;</span>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                            <div class="modal-body">-->
+<!--                                Bạn Có Muốn Xóa Không-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                                <a th:href="@{/form/{id}/delete(id=${row.getId()})}">-->
+<!--                                    &lt;!&ndash;                        <a  th:data-parameter1="${row.getId()}" th:onclick="deleteItem(this.getAttribute('data-parameter1'))">&ndash;&gt;-->
+<!--                                    <button type="button" class="btn btn-primary">Delete</button>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </tr>
+            </tbody>
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Delete</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            bạn có muốn xóa không ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a id="deleteLink">
+                                <button type="button">Delete</button>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </tr>
-            </tbody>
+            </div>
         </table>
     </div>
-    <button type="submit">Delete All</button>
+<!--    <input type="submit" value="deleteAll"/>-->
+    <a type="button"  data-toggle="modal" data-target="#modelId">
+        Delete All
+    </a>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn Có Muốn Xóa Không ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
 </body>
 <script
@@ -126,4 +173,12 @@
 <!--    };-->
 
 <!--</script>-->
+
+<script>
+    $('#staticBackdrop').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var id = button.data('id')
+        $('#deleteLink').attr("href", "/form/" + id +"/delete")
+    })
+</script>
 </html>

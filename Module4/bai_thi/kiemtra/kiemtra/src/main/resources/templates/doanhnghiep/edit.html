@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div th:replace="~{duan/list::headed}"></div>
+<h1>Update DoanhNghiep</h1>
+<div>
+    <form th:action="@{/doanhnghiep/update}" method="post" th:object="${DoanhNghiep}" novalidate="novalidate">
+        <div>
+
+            <label>MaDoanhNghiep:</label>
+            <span th:text="*{maDoanhNghiep}"></span>
+            <input type="hidden" th:field="*{maDoanhNghiep}">
+        </div>
+        <div>
+            <label>ten :</label>
+            <input type="text" th:field="*{tenDoanhNghiep}">
+        </div>
+        <div>
+            <label>LinhVuc :</label>
+            <input type="text" th:field="*{linhVuc}">
+        </div>
+        <div>
+            <label>SDT :</label>
+            <input type="text" th:field="*{sDT}">
+        </div>
+        <div>
+            <label>email :</label>
+            <input type="text" th:field="*{email}">
+        </div>
+        <div>
+            <label>diachi :</label>
+            <input type="text" th:field="*{diaChi}">
+        </div>
+
+
+        <input type="submit" value="Thêm Mới">
+    </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

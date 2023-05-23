@@ -5,9 +5,12 @@ import com.example.form.repository.FormRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
+@Transactional
 public class FormServiceImpl implements IFormService {
 
     @Autowired
@@ -45,6 +48,6 @@ public class FormServiceImpl implements IFormService {
 
     @Override
     public void deleteAll(String[] ids) {
-        repository.deleteAllByIdIn(ids);
+        repository.deleteAllByIdIn(Arrays.asList(ids));
     }
 }

@@ -1,0 +1,26 @@
+<p>calculator</p>
+
+<div class="form-group">
+  <label for="first" class="col-sm-2 control-label">First:</label>
+  <div class="col-sm-10" >
+    <input  #first
+      type="text" name="first" id="first" class="form-control" placeholder="Nhập số vào">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="second" class="col-sm-2 control-label">second:</label>
+  <div class="col-sm-10">
+    <input #second
+      type="text" name="second" id="second" class="form-control" placeholder="Nhập số vào">
+  </div>
+</div>
+
+
+
+  <button type="button" class="btn btn-default" (click)="cong(first.value,second.value)">Cộng</button>
+  <button type="button" class="btn btn-default" (click)="tru(first.value,second.value)">Trừ</button>
+  <button type="button" class="btn btn-default" (click)="nhan(first.value,second.value)">Nhân</button>
+  <button type="button" class="btn btn-default" (click)="chia(first.value,second.value)">Chia</button>
+
+<p>Kết Quả : {{result}}</p>

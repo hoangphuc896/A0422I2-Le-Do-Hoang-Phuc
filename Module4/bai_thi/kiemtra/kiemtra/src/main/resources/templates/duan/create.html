@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+<body>
+<h1>Create duan</h1>
+<p><a th:href="@{/duan}">Back To List duan</a></p>
+<div style="border: 1px solid ; width: 50% ; margin: 0 auto">
+    <form th:action="@{/duan/create}" method="post" th:object="${duan}">
+        <div>
+            <label>MaduAn:</label>
+            <input type="text" th:field="*{maDuAn}">
+            <span th:if="${#fields.hasErrors('maDuAn')}" th:errors="*{maDuAn}"></span>
+        </div>
+        <div>
+            <label>tenDuAn:</label>
+            <input type="text" th:field="*{tenDuAn}">
+            <span th:if="${#fields.hasErrors('tenDuAn')}" th:errors="*{tenDuAn}"></span>
+        </div>
+        <div>
+            <label>kinhphi:</label>
+            <input type="text" th:field="*{kinhPhi}">
+            <span th:if="${#fields.hasErrors('kinhPhi')}" th:errors="*{kinhPhi}"></span>
+        </div>
+        <div>
+            <label>mota:</label>
+            <input type="text" th:field="*{moTa}">
+            <span th:if="${#fields.hasErrors('moTa')}" th:errors="*{moTa}"></span>
+        </div>
+
+        <div>
+
+            <label>thoigian:</label>
+            <input type="text" th:field="*{thoiGian}">
+            <span th:if="${#fields.hasErrors('thoiGian')}" th:errors="*{thoiGian}"></span>
+        </div>
+        <div>
+            <label>ngaydangKy:</label>
+            <input type="date" th:field="*{ngayDangKy}">
+            <span th:if="${#fields.hasErrors('ngayDangKy')}" th:errors="*{ngayDangKy}"></span>
+        </div>
+        <div>
+            <select th:field="*{doanhnghiep}">
+                <option th:each="c: ${doanhnghieps}" th:text="${c.tenDoanhNghiep}" th:value="${c.maDoanhNghiep}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Create">
+    </form>
+</div>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>

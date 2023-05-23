@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::header}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="~{duan/list::headed}"></div>
+<p><a th:href="@{doanhnghiep/create}">Create ClassName</a></p>
+<div th:if="${msg}">
+    <div>
+        <span th:text="${msg}"></span>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">MaDoanhNghiep</th>
+        <th scope="col">TenDoanhNghiep</th>
+        <th scope="col">LinhVuc</th>
+        <th scope="col">SDT</th>
+        <th scope="col">Email</th>
+        <th scope="col">DiaChi</th>
+        <th scope="col">Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row:${doanhNghieps}" th:object="${row}">
+        <th th:text="${row.maDoanhNghiep}"></th>
+        <td th:text="${row.tenDoanhNghiep}"></td>
+        <td th:text="${row.linhVuc}"></td>
+        <td th:text="${row.sDT}"></td>
+        <td th:text="${row.email}"></td>
+        <td th:text="${row.diaChi}"></td>
+        <td><a th:href="@{doanhnghiep/{id}/edit(id=${row.getMaDoanhNghiep()})}">Update</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<div th:replace="~{layout::script}"></div>
+</html>
