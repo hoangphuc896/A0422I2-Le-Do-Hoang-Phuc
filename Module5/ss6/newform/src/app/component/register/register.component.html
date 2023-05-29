@@ -1,0 +1,36 @@
+<form action="" [formGroup]="rfRegister">
+  <div class="form-group">
+    <label for="email">email: </label>
+    <input #email
+      type="text" class="form-control" id="email" formControlName="email" >
+  </div>
+  <p class="text-danger" *ngIf="rfRegister.controls.email.errors.required">Bạn Nên Nhập Vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.email.errors.email">Bạn Nên Nhập Đúng Email</p>
+  <div class="form-group">
+    <label for="passworld">passworld: </label>
+    <input #passworld
+           type="text" class="form-control" id="passworld" formControlName="passworld" >
+  </div>
+  <p class="text-danger" *ngIf="rfRegister.controls.passworld.errors.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.passworld.errors.minLength">Bạn Nên Nhập tối đa là 6 ký tự</p>
+  <div class="form-group">
+    <label for="confirmpassword">confirmpassword: </label>
+    <input #confirmpassword
+           type="text" class="form-control" id="confirmpassword" formControlName="confirmpassword" >
+  </div>
+  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword.errors.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword.errors.minLength">Bạn Nên Nhập tối đa là 6 ký tự</p>
+  <p class="text-danger" *ngIf="confirmpassword.value != passworld.value ">Bạn Nên Nhập Giống Nhau</p>
+  <select>
+    <option *ngFor="let x of country">{{x}}</option>
+  </select>
+  <p class="jasmine-alert" *ngIf="rfRegister.controls.country.errors.required">Bạn Nên Nhập vào</p>
+  <div class="form-group">
+    <label for="age">age: </label>
+    <input #age
+           type="text" class="form-control" id="age" formControlName="age" >
+  </div>
+  <p class="text-danger" *ngIf="rfRegister.controls.age.errors.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.age.errors.max">Phải Đủ 18 Tuổi</p>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
