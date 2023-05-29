@@ -4,33 +4,48 @@
     <input #email
       type="text" class="form-control" id="email" formControlName="email" >
   </div>
-  <p class="text-danger" *ngIf="rfRegister.controls.email.errors.required">Bạn Nên Nhập Vào</p>
-  <p class="text-danger" *ngIf="rfRegister.controls.email.errors.email">Bạn Nên Nhập Đúng Email</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.email?.errors?.required">Bạn Nên Nhập Vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.email?.errors?.email">Bạn Nên Nhập Đúng Email</p>
   <div class="form-group">
     <label for="passworld">passworld: </label>
     <input #passworld
-           type="text" class="form-control" id="passworld" formControlName="passworld" >
+           type="password" class="form-control" id="passworld" formControlName="passworld" >
   </div>
-  <p class="text-danger" *ngIf="rfRegister.controls.passworld.errors.required">Bạn Nên Nhập vào</p>
-  <p class="text-danger" *ngIf="rfRegister.controls.passworld.errors.minLength">Bạn Nên Nhập tối đa là 6 ký tự</p>
+  <p *ngIf="rfRegister.controls.passworld?.errors?.required">Bạn Nên Nhập vào</p>
+  <p *ngIf="rfRegister.controls.passworld.hasError('minlength')">Bạn Nên Nhập tối đa là 6 ký tự</p>
   <div class="form-group">
     <label for="confirmpassword">confirmpassword: </label>
     <input #confirmpassword
-           type="text" class="form-control" id="confirmpassword" formControlName="confirmpassword" >
+           type="password" class="form-control" id="confirmpassword" formControlName="confirmpassword" >
   </div>
-  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword.errors.required">Bạn Nên Nhập vào</p>
-  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword.errors.minLength">Bạn Nên Nhập tối đa là 6 ký tự</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword?.errors?.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.confirmpassword?.errors?.minlength">Bạn Nên Nhập tối đa là 6 ký tự</p>
   <p class="text-danger" *ngIf="confirmpassword.value != passworld.value ">Bạn Nên Nhập Giống Nhau</p>
   <select>
     <option *ngFor="let x of country">{{x}}</option>
   </select>
-  <p class="jasmine-alert" *ngIf="rfRegister.controls.country.errors.required">Bạn Nên Nhập vào</p>
+  <p class="jasmine-alert" *ngIf="rfRegister.controls.country?.errors?.required">Bạn Nên Nhập vào</p>
   <div class="form-group">
     <label for="age">age: </label>
     <input #age
            type="text" class="form-control" id="age" formControlName="age" >
   </div>
-  <p class="text-danger" *ngIf="rfRegister.controls.age.errors.required">Bạn Nên Nhập vào</p>
-  <p class="text-danger" *ngIf="rfRegister.controls.age.errors.max">Phải Đủ 18 Tuổi</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.age?.errors?.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.age?.errors?.min">Phải Đủ 18 Tuổi</p>
+  <div class="radio">
+    <label for="gender">
+      <input type="radio" id="gender" checked="checked" formControlName="gender">
+      Radio box
+    </label>
+  </div>
+  <p class="jasmine-description" *ngIf="rfRegister.controls.gender?.errors?.required">Bạn Nên Nhập vào</p>
+
+  <div class="form-group">
+    <label for="phone">phone: </label>
+    <input
+      type="text" id="phone" class="form-control" formControlName="phone">
+  </div>
+  <p class="text-danger" *ngIf="rfRegister.controls.phone?.errors?.required">Bạn Nên Nhập vào</p>
+  <p class="text-danger" *ngIf="rfRegister.controls.phone?.errors?.pattern">Bạn Nhập Sai Định Dạng</p>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
