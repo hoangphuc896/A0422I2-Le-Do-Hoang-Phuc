@@ -1,0 +1,122 @@
+{
+  "products": [
+    {
+      "name": "1",
+      "price": 45456,
+      "description": "456456",
+      "category": {
+        "id": 2,
+        "nameCategory": "Code"
+      },
+      "id": "2"
+    },
+    {
+      "name": "243243",
+      "price": 234234,
+      "description": "234234",
+      "category": {
+        "id": 2,
+        "nameCategory": "Code"
+      },
+      "id": "3"
+    },
+    {
+      "name": "234243234",
+      "price": 234243,
+      "description": "234243",
+      "category": {
+        "nameCategory": "Phúc",
+        "id": 4
+      },
+      "id": "4"
+    },
+    {
+      "name": "2313255555",
+      "price": 12313213,
+      "description": "12132",
+      "category": {
+        "nameCategory": "Phúc",
+        "id": 4
+      },
+      "id": "5"
+    },
+    {
+      "name": "2342432432",
+      "price": 2432342,
+      "description": "234243",
+      "category": {
+        "nameCategory": "jamess",
+        "id": 1
+      },
+      "id": "6"
+    },
+    {
+      "name": "234243",
+      "price": 234243,
+      "description": "234243",
+      "category": {
+        "nameCategory": "Phúc",
+        "id": 4
+      },
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "name": "fhfdhg",
+      "price": 21313,
+      "description": "gdsfgsdgf",
+      "category": {
+        "nameCategory": "james",
+        "id": 1
+      }
+    },
+    {
+      "name": "2342432",
+      "price": 234243,
+      "description": "234243",
+      "category": {
+        "nameCategory": "Phúc",
+        "id": 4
+      },
+      "id": "13432"
+    },
+    {
+      "id": "2342143",
+      "name": "124312431243",
+      "price": 2134123412431234,
+      "description": "132413241324",
+      "category": {
+        "nameCategory": "Phúc",
+        "id": 4
+      }
+    },
+    {
+      "id": "45435353",
+      "name": "3453543",
+      "price": 453543,
+      "description": "45354354",
+      "category": {
+        "id": 3,
+        "nameCategory": "Gym"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "nameCategory": "jamess",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nameCategory": "Code"
+    },
+    {
+      "id": 3,
+      "nameCategory": "Gym"
+    },
+    {
+      "nameCategory": "Phúc",
+      "id": 4
+    }
+  ]
+}

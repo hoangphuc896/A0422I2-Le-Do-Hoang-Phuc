@@ -35,7 +35,7 @@ export class ProductDeleteComponent implements OnInit {
   }
 
   deleteProduct(id: number) {
-    return this.productService.deleteProduct(id);
-    this.router.navigate(['/product/list']) ;
+    this.productService.deleteProduct(id);
+    this.router.navigateByUrl('/product/list');
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "product-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/product-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@angular-devkit/build-angular:protractor",
+      "options": {
+        "protractorConfig": "apps/product-e2e/protractor.conf.js",
+        "devServerTarget": "product:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "product:serve:production"
+        }
+      }
+    }
+  },
+  "implicitDependencies": ["product"],
+  "tags": []
+}
