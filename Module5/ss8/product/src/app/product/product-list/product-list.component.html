@@ -1,5 +1,12 @@
 <h1>Danh sách sản phẩm</h1>
 <a routerLink="/product/create">Tạo mới sản phẩm</a>
+<div class="form-group">
+  <label for="search"></label>
+  <input #input
+         type="text"
+         id="search" class="form-control" placeholder="" aria-describedby="helpId">
+  <button type="button" class="btn btn-primary" (click)="search(input)">Search</button>
+</div>
 <table class="table">
   <thead>
   <tr>
@@ -12,16 +19,91 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let product of products; index as i">
+  <tr *ngFor="let product of products | paginate: { itemsPerPage: 2, currentPage: p }; index as i">
     <td>{{i + 1}}</td>
-    <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.category.nameCategory}}</td>
-    <td><a [routerLink]="['/product/update/',product.id]">Edit</a></td>
+    <td>{{product?.name}}</td>
+    <td>{{product?.price}}</td>
+    <td>{{product?.description}}</td>
+    <td>{{product?.category.nameCategory}}</td>
+    <td><button type="button"><a [routerLink]="['/product/update/',product.id]">Edit</a>
+      </button></td>
     <td>
-      <button (click)="deleteProduct(product.id)">Delete</button>
+    <td><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modelView"
+                (click)="getProductId(product.id)">
+      View
+    </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modelId"
+              (click)="getProductId(product.id)">
+        Delete
+      </button>
     </td>
   </tr>
   </tbody>
 </table>
+<h1 *ngIf="msg">Không Có Kết Quả</h1>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modelTitleId">Delete</h4>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+        <tr>
+          <td>Name:</td>
+          <td></td>
+          <td>{{product?.name}}</td>
+        </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modelView" tabindex="-1" role="dialog" aria-labelledby="modeViewId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modelViewId"></h4>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tr>
+            <td>STT</td>
+            <td>{{product?.id}}</td>
+          </tr>
+          <tr>
+            <td>Tên</td>
+            <td>{{product?.name}}</td>
+          </tr>
+          <tr>
+            <td>Giá</td>
+            <td>{{product?.price}}</td>
+          </tr>
+          <tr>
+            <td>Mô tả</td>
+            <td>{{product?.description}}</td>
+          </tr>
+          <tr>
+            <td>category</td>
+            <td>{{product?.category.nameCategory}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

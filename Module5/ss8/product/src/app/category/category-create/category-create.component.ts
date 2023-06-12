@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 })
 export class CategoryCreateComponent implements OnInit {
   categoryForm: FormGroup = new FormGroup({
-    idCategory: new FormControl(),
     nameCategory: new FormControl(),
   });
 

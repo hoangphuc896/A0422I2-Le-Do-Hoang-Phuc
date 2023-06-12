@@ -2,21 +2,20 @@
 <form [formGroup]="productForm" (ngSubmit)="submit()">
   <table>
     <tr>
-      <td>Id sản phẩm:</td>
-      <td><input type="text" formControlName="id"></td>
-    </tr>
-    <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name"></td>
     </tr>
+    <p *ngIf="productForm.controls.name.touched && productForm.controls.name.errors?.required">Không thể để trống</p>
     <tr>
       <td>Giá sản phẩm</td>
       <td><input type="number" formControlName="price"></td>
     </tr>
+    <p *ngIf="productForm.controls.price.touched && productForm.controls.price.errors?.required">Không thể để trống</p>
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
     </tr>
+    <p *ngIf="productForm.controls.description.touched && productForm.controls.description.errors?.required ">Không thể để trống</p>
     <tr>
       <td>Danh mục sản phẩm</td>
       <td><select formControlName="category">
@@ -24,10 +23,11 @@
         <option *ngFor="let category of categories" [ngValue]="category">{{category.nameCategory}}</option>
       </select></td>
     </tr>
+    <p *ngIf="productForm.controls.category.errors?.required ">Không thể để trống</p>
     <tr>
       <td></td>
       <td>
-        <button>Tạo mới</button>
+        <button [disabled]="productForm.invalid">Tạo mới</button>
       </td>
     </tr>
   </table>

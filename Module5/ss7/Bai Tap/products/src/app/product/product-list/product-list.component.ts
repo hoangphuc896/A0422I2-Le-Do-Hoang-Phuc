@@ -9,7 +9,7 @@ import { Product } from '../../model/product';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
+  products: Product[] = [] ;
   product: Product;
 
   constructor(private productService: ProductService) {}

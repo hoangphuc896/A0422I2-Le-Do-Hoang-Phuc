@@ -47,10 +47,12 @@ export class ProductUpdateComponent implements OnInit {
 
   updateProduct(id: number) {
     const product = this.productForm.value;
-    debugger
-    this.productService.updateProduct(id, product).subscribe(() => {
-      alert('bạn cập nhập thành công');
-      this.router.navigateByUrl('/product/list');
+    this.categoryService.findByIdCategory(product.category).subscribe(next => {
+      product.category = next;
+      this.productService.updateProduct(id, product).subscribe(() => {
+        alert('bạn cập nhập thành công');
+        this.router.navigateByUrl('/product/list');
+      });
     });
   }
 

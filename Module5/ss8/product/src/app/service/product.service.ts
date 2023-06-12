@@ -44,4 +44,8 @@ export class ProductService {
   deleteProduct(id: number): Observable<Product> {
     return this.http.delete<Product>(this.API + `/products/${id}`);
   }
+
+  search(input: string): Observable<Product[]> {
+    return this.http.get<Product[]>(this.API  + '/products?q=' + input);
+  }
 }

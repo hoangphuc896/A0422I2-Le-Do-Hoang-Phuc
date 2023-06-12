@@ -17,7 +17,7 @@
       <td>Danh mục sản phẩm</td>
       <td><select formControlName="category">
         <option disabled>Chọn danh mục sản phẩm</option>
-        <option *ngFor="let category of categories" [ngValue]="category">{{category.nameCategory}}</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">{{category.nameCategory}}</option>
       </select></td>
     </tr>
     <tr>

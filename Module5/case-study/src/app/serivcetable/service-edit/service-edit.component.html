@@ -1,0 +1,80 @@
+<br>
+<h1 style="text-align: center; color: blue">Thêm mới dịch vụ</h1>
+<form [formGroup]="serviceForm" (ngSubmit)="update(id)" >
+  <div class="container">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Id</label>
+        <input type="text" class="form-control"  formControlName="idService" readonly>
+        <p class="text-danger" *ngIf="serviceForm.controls.idService?.touched &&
+  serviceForm.controls.idService?.errors?.required">Không được để trống</p>
+        <p class="text-danger" *ngIf="serviceForm.controls.idService?.touched &&
+  serviceForm.controls.idService?.errors?.pattern">Không hợp lệ định dạng DV-xxxx</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Name</label>
+        <input type="text" class="form-control"  formControlName="nameService">
+        <p class="text-danger" *ngIf="serviceForm.controls.nameService?.touched &&
+  serviceForm.controls.nameService?.errors?.required">Không được để trống</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Diện tích</label>
+        <input type="number" class="form-control"  formControlName="dienTichService">
+        <p class="text-danger" *ngIf="serviceForm.controls.dienTichService?.touched &&
+  serviceForm.controls.dienTichService?.errors?.required">Không được để trống</p>
+        <p class="text-danger" *ngIf="serviceForm.controls.dienTichService?.touched &&
+  serviceForm.controls.dienTichService?.errors?.min">Diện tích phải lớn hơn 0</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Số tầng</label>
+        <input type="number" class="form-control"  formControlName="soTangService">
+        <p class="text-danger" *ngIf="serviceForm.controls.soTangService?.touched &&
+  serviceForm.controls.soTangService?.errors?.required">Không được để trống</p>
+        <p class="text-danger" *ngIf="serviceForm.controls.soTangService?.touched &&
+  serviceForm.controls.soTangService?.errors?.min">Số tầng phải lớn hơn 0</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Số người tối đa</label>
+        <input type="number" class="form-control"  formControlName="soNguoiToiDa">
+        <p class="text-danger" *ngIf="serviceForm.controls.soNguoiToiDa?.touched &&
+  serviceForm.controls.soNguoiToiDa?.errors?.required">Không được để trống</p>
+        <p class="text-danger" *ngIf="serviceForm.controls.soNguoiToiDa?.touched &&
+  serviceForm.controls.soNguoiToiDa?.errors?.min">Số người phải lớn hơn 0</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Chi phí thuê</label>
+        <input type="number" class="form-control"  formControlName="chiPhiThue">
+        <p class="text-danger" *ngIf="serviceForm.controls.chiPhiThue?.touched &&
+  serviceForm.controls.chiPhiThue?.errors?.required">Không được để trống</p>
+        <p class="text-danger" *ngIf="serviceForm.controls.chiPhiThue?.touched &&
+  serviceForm.controls.chiPhiThue?.errors?.min">Chi phí phải lớn hơn 0</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Kiểu thuê</label>
+        <select class="form-control" formControlName="rentalType">
+          <option selected [value]="null" disabled>Choose...</option>
+          <option *ngFor="let t of rentalTypes" value="{{t.id}}">{{t.nameRentalType}}</option>
+        </select>
+        <p class="text-danger" *ngIf="serviceForm.controls.rentalType?.touched &&
+  serviceForm.controls.rentalType?.errors?.required">Không được để trống</p>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Trạng thái</label>
+        <input type="text" class="form-control"  formControlName="trangThai">
+        <p class="text-danger" *ngIf="serviceForm.controls.trangThai?.touched &&
+  serviceForm.controls.trangThai?.errors?.required">Không được để trống</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="serviceForm.invalid">Submit</button>
+    <a class="btn btn-outline-info" style="margin-left: 50px ;margin-top: 0px"  (click)="reset()">Reset</a>
+    <a class="btn btn-outline-info" style="margin-left: 50px ;margin-top: 0px"  routerLink="/service/list">Back</a>
+  </div>
+</form>
+
+
+
+
+
+
+
+
