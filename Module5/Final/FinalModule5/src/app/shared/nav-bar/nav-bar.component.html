@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#productList" aria-controls="productList"
+          aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-expand-md" id="productList">
+    <a class="navbar-brand" routerLink="/product/list">My App/Logo with Text</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/category/list">Nav 2</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="dropdownId"
+           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Xem chi tiết danh mục</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" href="#">Action 1</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline float-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<a routerLink="/product/list">Danh sách sản phẩm</a>|<a routerLink="/category/list">Danh sách danh mục sản phẩm</a>

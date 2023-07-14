@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "name": "aaa",
+      "price": 123,
+      "description": "sdfsf",
+      "category": {
+        "nameCategory": "gym",
+        "id": 1
+      },
+      "id": 3
+    },
+    {
+      "name": "ádads",
+      "price": 23424,
+      "description": "2132132",
+      "category": "null",
+      "id": 4
+    },
+    {
+      "name": "phuc",
+      "price": 123123,
+      "description": "dfgdsfg",
+      "category": {
+        "nameCategory": "code",
+        "id": 2
+      },
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "nameCategory": "codes",
+      "id": 2
+    },
+    {
+      "nameCategory": "PHúc",
+      "id": 3
+    },
+    {
+      "nameCategory": "asd",
+      "id": 4
+    }
+  ]
+}
