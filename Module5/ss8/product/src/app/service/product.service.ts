@@ -38,14 +38,15 @@ export class ProductService {
   }
 
   updateProduct(id: number, product: Product): Observable<Product> {
-    return this.http.put<Product>(this.API + `/products/${id}`, product);
+    return this.http.put<Product>(this.API + '/products/'  + id, product);
   }
 
-  deleteProduct(id: number): Observable<Product> {
-    return this.http.delete<Product>(this.API + `/products/${id}`);
-  }
+    deleteProduct(id: number): Observable<Product> {
+      return this.http.delete<Product>(this.API + `/products/${id}`);
+    }
 
   search(input: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.API  + '/products?q=' + input);
+    return this.http.get<Product[]>(this.API + '/products?name_like=' + input + '&description_like=' + input);
   }
 }
+

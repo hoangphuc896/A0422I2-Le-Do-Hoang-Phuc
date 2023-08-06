@@ -1,26 +1,6 @@
 {
   "products": [
     {
-      "name": "fdsaf",
-      "price": 132123,
-      "description": "asdfsadf",
-      "category": {
-        "nameCategory": "code",
-        "id": 2
-      },
-      "id": 1
-    },
-    {
-      "name": "dfgdsg",
-      "price": 23234,
-      "description": "234243",
-      "category": {
-        "nameCategory": "gym",
-        "id": 1
-      },
-      "id": 2
-    },
-    {
       "name": "aaa",
       "price": 123,
       "description": "sdfsf",
@@ -29,20 +9,37 @@
         "id": 1
       },
       "id": 3
+    },
+    {
+      "name": "ádads",
+      "price": 23424,
+      "description": "2132132",
+      "category": "null",
+      "id": 4
+    },
+    {
+      "name": "phuc",
+      "price": 123123,
+      "description": "dfgdsfg",
+      "category": {
+        "nameCategory": "code",
+        "id": 2
+      },
+      "id": 5
     }
   ],
   "categories": [
     {
-      "nameCategory": "gym",
-      "id": 1
-    },
-    {
-      "nameCategory": "code",
+      "nameCategory": "codes",
       "id": 2
     },
     {
       "nameCategory": "PHúc",
       "id": 3
+    },
+    {
+      "nameCategory": "asd",
+      "id": 4
     }
   ]
 }
