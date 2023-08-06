@@ -1,0 +1,44 @@
+<h1>Cập nhật thông tin BenhAn</h1>
+<a routerLink="/benhan/list">Quay Lại Danh Sách</a>
+<form [formGroup]="benhAnForm" (ngSubmit)="updateBenhAn(id)">
+  <table>
+    <tr>
+      <td>Mã Bệnh án:</td>
+      <td><input type="text" formControlName="maBenhAn" disabled></td>
+    </tr>
+    <tr>
+      <td>Mã Bệnh Nhân</td>
+      <td><input type="text" formControlName="maBenhNhan" disabled></td>
+    </tr>
+    <tr>
+      <td>Tên Bệnh Nhan</td>
+      <td><input type="text" formControlName="tenBenhNhan"></td>
+    </tr>
+    <tr>
+      <td>Ngày nhập viện:</td>
+      <td><input type="text" formControlName="ngayNhapVien"></td>
+    </tr>
+    <p *ngIf="benhAnForm.controls.ngayNhapVien?.errors?.pattern">Bạn Nên Nhập đúng Ngày</p>
+    <tr>
+      <td>Ngày ra viện:</td>
+      <td><input type="text" formControlName="ngayraVien"></td>
+    </tr>
+    <p *ngIf="benhAnForm.controls.ngayraVien?.errors?.pattern">Bạn Nên Nhập đúng Ngày</p>
+    <tr>
+      <td>Lý Do nhập Viện:</td>
+      <td><input type="text" formControlName="lyDo"></td>
+    </tr>
+    <tr>
+      <td>Phương pháp điều trị:</td>
+      <td><input type="text" formControlName="phuongPhap"></td>
+    </tr>
+    <tr>
+      <td>Bác Sĩ Điều Trị:</td>
+      <td><input type="text" formControlName="bacSi"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Cập nhật</button></td>
+    </tr>
+  </table>
+</form>

@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   products: Product[];
   categories: Category[];
   product: Product;
-  p = 1;
+  p  = 1;
   msg = false;
 
 
@@ -44,7 +44,7 @@ export class ProductListComponent implements OnInit {
   deleteProduct() {
     this.productService.deleteProduct(this.product.id).subscribe(() => {
       Swal.fire({
-        position: 'top-right',
+        position: 'center',
         icon: 'success',
         title: 'Xóa thành công',
         showConfirmButton: false,
@@ -60,17 +60,13 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  search(input: HTMLInputElement) {
-    if (input.value === '') {
+  search(name: HTMLInputElement) {
+    if (name.value === '') {
       this.msg = true;
     } else {
-      this.productService.search(input.value).subscribe(next => {
+      this.productService.search(name.value).subscribe(next => {
           this.products = next;
-          if (this.products.length === 0) {
-            this.msg = true;
-          } else {
-            this.msg = false;
-          }
+          this.msg = this.products.length === 0;
         }
       );
     }

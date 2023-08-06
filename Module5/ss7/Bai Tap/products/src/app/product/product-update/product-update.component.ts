@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../service/product.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Product } from '../../model/product';
-
 @Component({
   selector: 'app-product-update',
   templateUrl: './product-update.component.html',
